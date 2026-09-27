@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FixIt | Select Issue Type</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/issue-type.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Task 12.1 -->
+      <section id="issue-type" class="screen long-screen">
+        <header class="site-header">
+          <div class="topbar">
+            <a class="menu" href="#issue-type">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+            <a class="brand" href="#issue-type">FixIt</a>
+            <img
+              class="council-logo"
+              src="../assets/council-logo.png"
+              alt="Auckland Council"
+            />
+          </div>
+          <input class="search" type="search" placeholder="Search" />
+          <div class="steps">
+            <span class="done"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </header>
+        <div class="screen-content">
+          <h1 class="title">Select issue type</h1>
+          <div class="issue-list">
+            <button type="button" class="issue selected">Graffiti</button>
+            <button type="button" class="issue">Full rubbish bin</button>
+            <button type="button" class="issue">Blocked drain</button>
+            <button type="button" class="issue">Abandoned trolley</button>
+            <button type="button" class="issue">Broken Streetlight</button>
+            <button type="button" class="issue">Illegal dumping</button>
+            <button type="button" class="issue">Playground damage</button>
+            <button type="button" class="issue">Fallen trees</button>
+            <button type="button" class="issue more">
+              Something Else
+              <span class="issue-note"
+                >Choose this if you are looking for a different report
+                type</span
+              >
+            </button>
+          </div>
+          <p class="error-message" role="alert" hidden>! Please select an issue type</p>
+          <a class="button continue" href="#details"
+            >Continue <span class="arrow" aria-hidden="true">→</span></a
+          >
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

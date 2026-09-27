@@ -1,0 +1,76 @@
+.photo-card {
+  width: 332px;
+  height: 270px;
+  margin: 44px 0 0 12px;
+  border: 1px solid #8e8e93;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.photo-card .photo-error-title {
+  color: #ff383c;
+}
+
+.photo-error-title {
+  margin: 16px 8px 0;
+  color: #1f3c58;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.photo-error-message {
+  margin: 6px 4px 0;
+  color: #8e8e93;
+  font-size: 13px;
+}
+
+.photo-state .photo-actions {
+  margin-top: 28px;
+  margin-left: 16px;
+}
+
+.photo-notice {
+  border-radius: 12px;
+  justify-content: flex-start;
+}
+
+.notification-icon {
+  margin-top: 40px;
+}
+
+#upload-loading .notification-icon {
+  width: 53px;
+  height: 53px;
+}
+
+.photo-state .photo-action {
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.photo-action-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.upload-progress {
+  width: 173px;
+  height: 12px;
+  margin-top: 12px;
+  border-radius: 8px;
+  background-color: #d5e6fd;
+}
+
+.upload-progress-fill {
+  width: 54%;
+  height: 12px;
+  border-radius: 8px;
+  background-color: #1f3c58;
+}

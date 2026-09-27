@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FixIt | Details</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/detailes.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Task 12.2 -->
+      <section id="details" class="screen details-page">
+        <header class="site-header">
+          <div class="topbar">
+            <a class="menu" href="#issue-type">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+            <a class="brand" href="#issue-type">FixIt</a>
+            <img
+              class="council-logo"
+              src="../assets/council-logo.png"
+              alt="Auckland Council"
+            />
+          </div>
+          <input class="search" type="search" placeholder="Search" />
+          <div class="steps">
+            <span class="done"></span>
+            <span class="done"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </header>
+        <div class="screen-content">
+          <h1 class="title">Tell us about it</h1>
+          <form class="screen-form">
+            <textarea
+              class="details-box"
+              placeholder="Enter issue details (e.g. I saw a fallen tree in the middle of the lane)"
+            ></textarea>
+            <p class="error-message" role="alert" hidden>! Please describe details</p>
+            <div class="photo-actions">
+              <label class="photo-action first"
+                >Add photos<input type="file" accept="image/*"
+              /></label>
+              <label class="photo-action second"
+                >Take new photos<input type="file" accept="image/*"
+              /></label>
+            </div>
+            <a class="button continue" href="#location">Continue <span class="arrow" aria-hidden="true">→</span></a>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

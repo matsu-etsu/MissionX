@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FixIt | Error</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/error-sample.css" />
+  </head>
+  <body>
+    <main>
+<!-- Task 14.2 -->
+      <section id="upload-loading" class="screen photo-state">
+        <header class="site-header">
+          <div class="topbar">
+            <a class="menu" href="#issue-type">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+            <a class="brand" href="#issue-type">FixIt</a>
+            <img
+              class="council-logo"
+              src="assets/council-logo.png"
+              alt="Auckland Council"
+            />
+          </div>
+          <input class="search" type="search" placeholder="Search" />
+        </header>
+        <div class="screen-content">
+          <h1 class="title">Add photos</h1>
+          <div class="photo-card photo-notice">
+            <img class="notification-icon" src="../assets/clock-history.svg" alt="" />
+            <h2>Uploading photo...</h2>
+            <div class="upload-progress">
+              <div class="upload-progress-fill"></div>
+            </div>
+          </div>
+          <div class="photo-actions">
+            <label class="photo-action first"
+              ><img class="photo-action-icon" src="../assets/plus.svg" alt="" />Add photos<input type="file" accept="image/*"
+            /></label>
+            <label class="photo-action second"
+              ><img class="photo-action-icon" src="../assets/camera.svg" alt="" />Take new photos<input type="file" accept="image/*"
+            /></label>
+          </div>
+          <a class="button continue" href="#location">Continue <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <!-- Task 14.3 -->
+      <section id="upload-success" class="screen photo-state">
+        <header class="site-header">
+          <div class="topbar">
+            <a class="menu" href="#issue-type">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+            <a class="brand" href="#issue-type">FixIt</a>
+            <img
+              class="council-logo"
+              src="../assets/council-logo.png"
+              alt="Auckland Council"
+            />
+          </div>
+          <input class="search" type="search" placeholder="Search" />
+        </header>
+        <div class="screen-content">
+          <h1 class="title">Add photos</h1>
+          <div class="photo-card">
+            <div class="success-mark">✓</div>
+            <h2>Photo uploaded!</h2>
+          </div>
+          <a class="button continue" href="#location">Continue <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <!-- Task 14.4 -->
+      <section id="login-error" class="screen login-state account-page">
+        <header class="site-header">
+          <div class="topbar">
+            <a class="menu" href="#issue-type">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+            <a class="brand" href="#issue-type">FixIt</a>
+            <img
+              class="council-logo"
+              src="assets/council-logo.png"
+              alt="Auckland Council"
+            />
+          </div>
+          <input class="search" type="search" placeholder="Search" />
+        </header>
+        <div class="screen-content">
+          <h1 class="title">Log in</h1>
+          <form class="login-form">
+            <div class="field email-field">
+              <label class="field-label" for="login-error-login-email"
+                >Email address</label
+              >
+              <input
+                class="field-input"
+                type="email"
+                id="login-error-login-email"
+                placeholder="lindaS@gmail.com"
+              />
+              <p class="error-text">! Enter a valid email address</p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="login-error-login-password"
+                >Password</label
+              >
+              <input
+                class="field-input"
+                type="password"
+                id="login-error-login-password"
+                placeholder="************"
+              />
+            </div>
+            <div class="login-options-row">
+              <label class="login-options"
+                ><input type="checkbox" checked />Remember me</label
+              >
+              <a class="forgot" href="#login">Forgot password?</a>
+            </div>
+            <button class="button login-button" type="button">Log in</button>
+          </form>
+          <div class="account-footer">
+            <p class="login-note">No account yet?</p>
+            <a class="small-link create-link" href="#register"
+              >Create account</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Task 14.5 -->
+      <section id="login-loading" class="screen login-state account-page">
+        <header class="site-header">
+          <div class="topbar">
+            <a class="menu" href="#issue-type">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+            <a class="brand" href="#issue-type">FixIt</a>
+            <img
+              class="council-logo"
+              src="assets/council-logo.png"
+              alt="Auckland Council"
+            />
+          </div>
+          <input class="search" type="search" placeholder="Search" />
+        </header>
+        <div class="screen-content">
+          <h1 class="title">Log in</h1>
+          <form class="login-form">
+            <div class="field email-field">
+              <label class="field-label" for="login-loading-login-email"
+                >Email address</label
+              >
+              <input
+                class="field-input"
+                type="email"
+                id="login-loading-login-email"
+                placeholder="lindaS@gmail.com"
+              />
+            </div>
+            <div class="field">
+              <label class="field-label" for="login-loading-login-password"
+                >Password</label
+              >
+              <input
+                class="field-input"
+                type="password"
+                id="login-loading-login-password"
+                placeholder="************"
+              />
+            </div>
+            <div class="login-options-row">
+              <label class="login-options"
+                ><input type="checkbox" checked />Remember me</label
+              >
+              <a class="forgot" href="#login">Forgot password?</a>
+            </div>
+            <button class="button login-button loading-button" type="button">
+              Logging in...
+            </button>
+          </form>
+          <div class="account-footer">
+            <p class="login-note">No account yet?</p>
+            <a class="small-link create-link" href="#register"
+              >Create account</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Task 14.6 -->
+      <section id="login-success" class="screen login-state account-page">
+        <header class="site-header">
+          <div class="topbar">
+            <a class="menu" href="#issue-type">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+            <a class="brand" href="#issue-type">FixIt</a>
+            <img
+              class="council-logo"
+              src="assets/council-logo.png"
+              alt="Auckland Council"
+            />
+          </div>
+          <input class="search" type="search" placeholder="Search" />
+        </header>
+        <div class="screen-content">
+          <h1 class="title">Log in</h1>
+          <p class="login-success-bar">
+            Login successful - Redirecting securely...
+          </p>
+          <form class="login-form">
+            <div class="field email-field">
+              <label class="field-label" for="login-success-login-email"
+                >Email address</label
+              >
+              <input
+                class="field-input"
+                type="email"
+                id="login-success-login-email"
+                placeholder="lindaS@gmail.com"
+              />
+            </div>
+            <div class="field">
+              <label class="field-label" for="login-success-login-password"
+                >Password</label
+              >
+              <input
+                class="field-input"
+                type="password"
+                id="login-success-login-password"
+                placeholder="************"
+              />
+            </div>
+            <div class="login-options-row">
+              <label class="login-options"
+                ><input type="checkbox" checked />Remember me</label
+              >
+              <a class="forgot" href="#login">Forgot password?</a>
+            </div>
+            <button class="button login-button logged-in-button" type="button">
+              Logged in
+            </button>
+          </form>
+          <div class="account-footer">
+            <p class="login-note">No account yet?</p>
+            <a class="small-link create-link" href="#register"
+              >Create account</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

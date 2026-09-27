@@ -1,0 +1,267 @@
+/* 1. Page and header */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  color: #1f3c58;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.screen {
+  width: 100%;
+  max-width: 402px;
+  min-height: 874px;
+  margin: 0 auto 32px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.long-screen {
+  min-height: 1083px;
+}
+
+.topbar {
+  height: 96px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.long-screen .topbar {
+  height: 80px;
+}
+
+.photo-state .topbar {
+  height: 112px;
+}
+
+.menu {
+  width: 110px;
+  height: 56px;
+  padding: 16px;
+  display: block;
+}
+
+.menu span {
+  width: 24px;
+  height: 2px;
+  margin: 4px 0;
+  display: block;
+  background-color: #1f3c58;
+}
+
+.brand {
+  color: #1f3c58;
+  font-size: 32px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.council-logo {
+  width: 110px;
+  height: 110px;
+}
+
+.search {
+  width: 343px;
+  height: 50px;
+  margin-left: 32px;
+  padding: 8px;
+  border: 1px solid #8e8e93;
+  border-radius: 8px;
+  display: block;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 15px;
+}
+
+.long-screen .search {
+  margin-top: 8px;
+}
+
+.steps {
+  width: 228px;
+  height: 22px;
+  margin: 32px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.long-screen .steps {
+  margin-top: 40px;
+}
+
+.steps span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #8e8e93;
+}
+
+.steps .done {
+  background-color: #1f3c58;
+}
+
+/* 2. Shared content and buttons */
+.screen-content {
+  padding: 40px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.long-screen .screen-content {
+  padding-top: 52px;
+  padding-bottom: 56px;
+}
+
+.details-page .screen-content {
+  padding-top: 36px;
+}
+
+.location-page .screen-content {
+  padding-top: 48px;
+}
+
+.account-page .screen-content,
+.history-page .screen-content {
+  padding-top: 32px;
+}
+
+.register-page .screen-content,
+.login-state .screen-content {
+  padding-top: 40px;
+}
+
+.photo-state .screen-content {
+  padding-top: 56px;
+  padding-bottom: 24px;
+}
+
+.contact-page .screen-content {
+  padding-bottom: 44px;
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.button {
+  height: 44px;
+  padding: 12px 16px;
+  border: 1px solid #1f3c58;
+  border-radius: 8px;
+  background-color: #1f3c58;
+  color: white;
+  display: block;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #365f84;
+}
+
+.outline {
+  background-color: white;
+  color: #1f3c58;
+}
+
+.outline:hover {
+  background-color: #d5e6fd;
+}
+
+.continue {
+  width: 100%;
+  margin-top: auto;
+}
+
+.arrow {
+  margin-left: 8px;
+}
+
+.screen-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* input fields */
+.field {
+  margin-bottom: 16px;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.field-input {
+  width: 100%;
+  height: 44px;
+  padding: 8px;
+  border: 1px solid #8e8e93;
+  border-radius: 8px;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 15px;
+}
+
+/* Account screens */
+.account-footer {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.account-footer p {
+  margin: 0;
+  color: #8e8e93;
+  font-size: 12px;
+}
+
+.account-footer a {
+  color: #1f3c58;
+  font-size: 14px;
+}
+
+/* Photo */
+.photo-action {
+  width: 330px;
+  height: 41px;
+  padding: 8px 12px;
+  border: 1px solid #8e8e93;
+  border-radius: 8px;
+  background-color: white;
+  color: #1f3c58;
+  display: block;
+  font-size: 13px;
+}
+
+.photo-action input {
+  display: none;
+}
+
+.photo-actions {
+  margin: 48px 0 0 24px;
+}
+
+.photo-actions .photo-action {
+  margin-bottom: 16px;
+}
+
+/* Error */
+.error-message {
+  margin: 4px 0;
+  color: #ff383c;
+  font-size: 11px;
+}

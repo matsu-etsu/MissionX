@@ -1,0 +1,52 @@
+.counts {
+  height: 39px;
+  margin-top: 32px;
+  padding: 0 8px;
+  background-color: #d5e6fd;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.report-list {
+  margin-top: 32px;
+}
+
+.history-row {
+  min-height: 116px;
+  margin-bottom: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #8e8e93;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.history-row h2 {
+  width: 149px;
+  margin: 0 0 4px 48px;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.history-row p {
+  margin: 4px 0 0 72px;
+  font-size: 13px;
+}
+
+.badge {
+  width: 157px;
+  height: 41px;
+  padding: 12px 8px;
+  background-color: #ffe987;
+  color: #1f3c58;
+  flex-shrink: 0;
+  font-size: 13px;
+  text-align: center;
+}
+
+.badge.resolved {
+  background-color: #b5ffc8;
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FixIt | Details</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/location.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Task 12.3 -->
+      <section id="location" class="screen location-page">
+        <header class="site-header">
+          <div class="topbar">
+            <a class="menu" href="#issue-type">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+            <a class="brand" href="#issue-type">FixIt</a>
+            <img
+              class="council-logo"
+              src="../assets/council-logo.png"
+              alt="Auckland Council"
+            />
+          </div>
+          <input class="search" type="search" placeholder="Search" />
+          <div class="steps">
+            <span class="done"></span>
+            <span class="done"></span>
+            <span class="done"></span>
+            <span></span>
+            <span></span>
+          </div>
+        </header>
+        <div class="screen-content">
+          <h1 class="title">Where is the issue?</h1>
+          <form class="screen-form">
+            <input
+              class="field-input address"
+              type="text"
+              placeholder="478 Kiwi Road, Remuera, Auckland 1034"
+            />
+            <div class="map">
+              <img
+                src="../assets/map.png"
+                alt="Map shown in the original Figma design"
+              />
+            </div>
+            <button class="button outline location-button" type="button">
+              Use Current location
+            </button>
+            <p class="error-message" role="alert" hidden>! Please choose location</p>
+            <a class="button continue" href="#contact">Continue <span class="arrow" aria-hidden="true">→</span></a>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

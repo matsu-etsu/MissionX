@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FixIt | Log in</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+  </head>
+  <body>
+    <main>
+      <section id="login" class="screen login-page account-page">
+        <header class="site-header">
+          <div class="topbar">
+            <a class="menu" href="#issue-type">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+            <a class="brand" href="#issue-type">FixIt</a>
+            <img
+              class="council-logo"
+              src="../assets/council-logo.png"
+              alt="Auckland Council"
+            />
+          </div>
+          <input class="search" type="search" placeholder="Search" />
+        </header>
+        <div class="screen-content">
+          <h1 class="title">Log in</h1>
+          <form class="login-form">
+            <div class="field email-field">
+              <label class="field-label" for="login-login-email"
+                >Email address</label
+              >
+              <input
+                class="field-input"
+                type="email"
+                id="login-login-email"
+                placeholder="lindaS@gmail.com"
+              />
+              <p id="email-error" class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="login-login-password"
+                >Password</label
+              >
+              <input
+                class="field-input"
+                type="password"
+                id="login-login-password"
+                placeholder="************"
+              />
+              <p id="password-error" class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="login-options-row">
+              <label class="login-options"
+                ><input type="checkbox" checked />Remember me</label
+              >
+              <a class="forgot" href="#login">Forgot password?</a>
+            </div>
+            <button class="button login-button" type="button">Log in</button>
+          </form>
+          <div class="account-footer">
+            <p class="login-note">No account yet?</p>
+            <a class="small-link create-link" href="#register"
+              >Create account</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

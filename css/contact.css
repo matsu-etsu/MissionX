@@ -1,0 +1,20 @@
+.contact-options {
+  margin: 28px 0 40px 12px;
+  display: flex;
+}
+
+.contact-choice {
+  width: 157px;
+  height: 41px;
+  margin-right: 24px;
+  padding: 8px 4px;
+}
+
+.contact-choice.selected {
+  background-color: #d5e6fd;
+}
+
+.contact-form .field {
+  margin-bottom: 8px;
+}
+

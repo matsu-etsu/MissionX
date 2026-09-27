@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FixIt | Resister</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/register.css" />
+  </head>
+  <body>
+    <main>
+      <section id="register" class="screen register-page account-page">
+        <header class="site-header">
+          <div class="topbar">
+            <a class="menu" href="#issue-type">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+            <a class="brand" href="#issue-type">FixIt</a>
+            <img
+              class="council-logo"
+              src="../assets/council-logo.png"
+              alt="Auckland Council"
+            />
+          </div>
+          <input class="search" type="search" placeholder="Search" />
+        </header>
+        <div class="screen-content">
+          <h1 class="title">Create FixIt account</h1>
+          <form class="register-form">
+            <div class="field">
+              <label class="field-label" for="register-register-name"
+                >Full name</label
+              >
+              <input
+                class="field-input"
+                type="text"
+                id="register-register-name"
+                placeholder="e.g. Linda Smith"
+              />
+              <p id="name-error" class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="register-register-email"
+                >Email address</label
+              >
+              <input
+                class="field-input"
+                type="email"
+                id="register-register-email"
+                placeholder="lindaS@gmail.com"
+              />
+              <p id="email-error" class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="register-register-phone"
+                >Phone number</label
+              >
+              <input
+                class="field-input"
+                type="tel"
+                id="register-register-phone"
+                placeholder="+64 0248573752"
+              />
+              <p id="phone-error" class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="register-register-password"
+                >Password</label
+              >
+              <input
+                class="field-input"
+                type="password"
+                id="register-register-password"
+                placeholder="************"
+              />
+              <p id="password-error" class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="register-register-confirm"
+                >Confirm password</label
+              >
+              <input
+                class="field-input"
+                type="password"
+                id="register-register-confirm"
+                placeholder="************"
+              />
+              <p id="confirm-p-error" class="error-message" role="alert" hidden></p>
+            </div>
+            <button class="button register-button" type="button">
+              Create account
+            </button>
+          </form>
+          <div class="account-footer">
+            <p class="register-note">Already have an account?</p>
+            <a class="small-link register-link" href="#login">Log in</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

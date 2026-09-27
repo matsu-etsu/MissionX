@@ -1,0 +1,11 @@
+.details-box {
+  width: 336px;
+  height: 236px;
+  margin: 24px 0 0 20px;
+  padding: 12px;
+  border: 1px solid #8e8e93;
+  border-radius: 8px;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 13px;
+}
+

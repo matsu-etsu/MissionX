@@ -1,0 +1,73 @@
+.login-form {
+  margin-top: 40px;
+}
+
+.login-form .field-input {
+  margin-left: 0;
+}
+
+.login-state .login-form {
+  margin-top: 40px;
+}
+
+.login-state .email-field {
+  margin-bottom: 16px;
+}
+
+.login-error-text {
+  margin: 4px 0;
+  color: #ff383c;
+  font-size: 11px;
+}
+
+.login-options-row {
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-options-row label,
+.login-options-row a {
+  color: #8e8e93;
+  font-size: 12px;
+}
+
+.login-options-row input {
+  width: 12px;
+  height: 12px;
+  margin: 0 8px 0 0;
+}
+
+.login-button {
+  width: 157px;
+  height: 41px;
+  margin: 40px auto 0;
+  padding: 8px 0;
+}
+
+.login-form + .account-footer {
+  margin-top: 152px;
+}
+
+.login-success-bar {
+  margin: 8px 0 0;
+  padding: 4px 12px;
+  background-color: #b5ffc8;
+  color: black;
+  font-size: 12px;
+}
+
+.login-success-bar + .login-form {
+  margin-top: 8px;
+}
+
+.loading-button {
+  border-color: #8e8e93;
+  background-color: #8e8e93;
+  color: #1f3c58;
+}
+
+.logged-in-button {
+  border-color: #3c6720;
+  background-color: #3c6720;
+}

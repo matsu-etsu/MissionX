@@ -1,0 +1,23 @@
+.address {
+  margin-top: 24px;
+}
+
+.map {
+  width: 332px;
+  height: 270px;
+  margin: 40px 0 0 16px;
+  border: 1px solid #8e8e93;
+  overflow: hidden;
+}
+
+.map img {
+  width: 333px;
+  height: 310px;
+}
+
+.location-button {
+  width: 157px;
+  height: 41px;
+  margin: 32px auto 0;
+  padding: 8px 0;
+}
