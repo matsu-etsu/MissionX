@@ -10,6 +10,10 @@ body {
   font-family: Inter, Arial, sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 .screen {
   width: 100%;
   max-width: 402px;
@@ -30,6 +34,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .long-screen .topbar {
@@ -40,19 +45,76 @@ body {
   height: 112px;
 }
 
-.menu {
-  width: 110px;
+.menu-button {
+  width: 60px;
   height: 56px;
   padding: 16px;
   display: block;
+  border: none;
+  background: transparent;
 }
 
-.menu span {
+.menu-button span {
   width: 24px;
   height: 2px;
   margin: 4px 0;
   display: block;
   background-color: #1f3c58;
+}
+
+.menu-list {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 45%;
+  padding: 80px 30px 18px 30px;
+  background-color: rgba(213, 230, 253, 0.9);
+  z-index: 10;
+}
+
+.menu-list a {
+  display: flex;
+  justify-content: left;
+  color: #1f3c58;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 33px;
+}
+
+.menu-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-report {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-report span {
+  line-height: 18px;
+}
+
+.small-text-in-menu {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.menu-button.open span:first-child {
+  transform: translateY(5.8px) rotate(45deg);
+}
+
+.menu-button.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button.open span:last-child {
+  transform: translateY(-5.8px) rotate(-45deg);
+}
+
+.menu-button.open {
+  z-index: 20;
 }
 
 .brand {
@@ -67,16 +129,23 @@ body {
   height: 110px;
 }
 
-.search {
+search {
+  display: flex;
+  justify-content: center;
+}
+
+search label {
+  display: none;
+}
+
+#search-input {
   width: 343px;
   height: 50px;
-  margin-left: 32px;
   padding: 8px;
-  border: 1px solid #8e8e93;
   border-radius: 8px;
-  display: block;
-  font-family: Inter, Arial, sans-serif;
+  border: 1px solid #8e8e93;
   font-size: 15px;
+  display: block;
 }
 
 .long-screen .search {
@@ -264,4 +333,19 @@ body {
   margin: 4px 0;
   color: #ff383c;
   font-size: 11px;
+}
+
+/* Responsive Web Development lesson: keep the design within the viewport. */
+@media screen and (max-width: 402px) {
+  .search {
+    width: 85%;
+  }
+
+  .field-input,
+  .details-box,
+  .photo-action,
+  .map,
+  .photo-card {
+    max-width: 90%;
+  }
 }
