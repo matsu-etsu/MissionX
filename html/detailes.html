@@ -10,51 +10,134 @@
     />
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/detailes.css" />
+    <script src="../js/global.js" defer></script>
+    <script src="../js/details.js" defer></script>
   </head>
   <body>
     <main>
-      <!-- Task 12.2 -->
-      <section id="details" class="screen details-page">
+      <section id="details" class="screen details-page photo-state">
         <header class="site-header">
           <div class="topbar">
-            <a class="menu" href="#issue-type">
-              <span></span>
-              <span></span>
-              <span></span>
-            </a>
-            <a class="brand" href="#issue-type">FixIt</a>
             <img
               class="council-logo"
               src="../assets/council-logo.png"
               alt="Auckland Council"
             />
-          </div>
-          <input class="search" type="search" placeholder="Search" />
-          <div class="steps">
-            <span class="done"></span>
-            <span class="done"></span>
-            <span></span>
-            <span></span>
-            <span></span>
+            <a class="brand" href="issue-type.html">FixIt</a>
+            <button class="menu-button" aria-label="menu" type="button">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <nav class="menu-list" id="main-menu" hidden>
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li>
+                  <a href="issue-type.html" class="menu-report">
+                    <span>FixIt</span>
+                    <span class="small-text-in-menu">-Report an issue</span></a
+                  >
+                </li>
+                <li><a href="history.html">My reports</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#help">Help</a></li>
+                <li><a href="#contact">Contact us</a></li>
+                <li><a href="login.html">Log in</a></li>
+              </ul>
+            </nav>
           </div>
         </header>
         <div class="screen-content">
-          <h1 class="title">Tell us about it</h1>
           <form class="screen-form">
+            <h1 class="title tell-us">Tell us about it</h1>
             <textarea
               class="details-box"
               placeholder="Enter issue details (e.g. I saw a fallen tree in the middle of the lane)"
             ></textarea>
-            <p class="error-message" role="alert" hidden>! Please describe details</p>
+            <p class="error-message" role="alert" hidden>
+              ! Please describe details
+            </p>
+
+            <!-- Photo -->
+            <div class="photo-area">
+              <!-- Photo notice hidden -->
+              <div class="photo-status">
+                <div class="photo-uploading" hidden>
+                  <h1 class="title">Add photos</h1>
+                  <div class="photo-card photo-notice">
+                    <img
+                      class="notification-icon"
+                      src="../assets/clock-history.svg"
+                      alt=""
+                    />
+                    <h2 role="alert">Uploading photo...</h2>
+                    <div class="upload-progress">
+                      <div class="upload-progress-fill"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="photo-uploaded" hidden>
+                  <h1 class="title">Add photos</h1>
+                  <div class="photo-card">
+                    <div class="success-mark">✓</div>
+                    <h2 role="alert">Photo uploaded!</h2>
+                  </div>
+                </div>
+
+                <div class="photo-error" hidden>
+                  <h1 class="title">Add photos</h1>
+                  <div class="photo-card photo-notice">
+                    <img
+                      class="notification-icon"
+                      src="../assets/photo-error.svg"
+                      alt=""
+                    />
+                    <h2 class="photo-error-title" role="alert">
+                      This file cannot be uploaded
+                    </h2>
+                    <p class="photo-error-message" role="alert">
+                      Use JPG, PNG under 3MB.
+                    </p>
+                    <button
+                      class="close-error"
+                      type="button"
+                      aria-label="Close an error screen"
+                    >
+                      <span class="close-mark" aria-hidden="true">&times;</span
+                      ><span class="close-text" aria-hidden="true">Close</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo actions -->
             <div class="photo-actions">
-              <label class="photo-action first"
-                >Add photos<input type="file" accept="image/*"
+              <label class="photo-action add-photos"
+                ><img
+                  class="photo-action-icon"
+                  src="../assets/plus.svg"
+                  alt="" />Add photos<input
+                  type="file"
+                  accept="image/*"
+                  multiple
+                  class="visually-hidden"
               /></label>
-              <label class="photo-action second"
-                >Take new photos<input type="file" accept="image/*"
+              <label class="photo-action take-photos"
+                ><img
+                  class="photo-action-icon"
+                  src="../assets/camera.svg"
+                  alt="" />Take new photos<input
+                  type="file"
+                  accept="image/*"
+                  capture="environment"
+                  class="visually-hidden"
               /></label>
             </div>
-            <a class="button continue" href="#location">Continue <span class="arrow" aria-hidden="true">→</span></a>
+            <button class="button continue" type="button">
+              Continue <span class="arrow" aria-hidden="true">→</span>
+            </button>
           </form>
         </div>
       </section>

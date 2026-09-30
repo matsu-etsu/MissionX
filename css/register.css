@@ -1,0 +1,28 @@
+.register-form {
+  margin-top: 48px;
+}
+
+.register-form .field {
+  margin-bottom: 0;
+}
+
+.register-button {
+  width: 157px;
+  height: 41px;
+  margin: 80px auto 0;
+  padding: 8px 0;
+}
+
+.register-form .field-input {
+  margin-left: 0;
+}
+
+.field-label {
+  margin-top: 15px;
+}
+
+.hint-message {
+  margin: 4px 0;
+  color: #1f3c58;
+  font-size: 11px;
+}

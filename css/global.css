@@ -1,4 +1,4 @@
-/* 1. Page and header */
+/* 1. Page and header ---------------------------------*/
 * {
   box-sizing: border-box;
 }
@@ -45,6 +45,13 @@ a {
   height: 112px;
 }
 
+.council-logo {
+  width: 32px;
+  height: 40px;
+  margin: 20px;
+}
+
+/* Hamburger menu */
 .menu-button {
   width: 60px;
   height: 56px;
@@ -52,6 +59,7 @@ a {
   display: block;
   border: none;
   background: transparent;
+  cursor: pointer;
 }
 
 .menu-button span {
@@ -60,6 +68,12 @@ a {
   margin: 4px 0;
   display: block;
   background-color: #1f3c58;
+}
+
+.menu-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .menu-list {
@@ -79,12 +93,6 @@ a {
   font-size: 18px;
   font-weight: bold;
   line-height: 33px;
-}
-
-.menu-list ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .menu-report {
@@ -124,27 +132,34 @@ a {
   text-decoration: none;
 }
 
-.council-logo {
-  width: 110px;
-  height: 110px;
-}
-
+/* Search */
 search {
   display: flex;
   justify-content: center;
 }
 
-search label {
-  display: none;
+.visually-hidden {
+  border: 0 !important;
+  clip: rect(0, 0, 0, 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
 }
 
 #search-input {
   width: 343px;
   height: 50px;
-  padding: 8px;
-  border-radius: 8px;
-  border: 1px solid #8e8e93;
+  background: #f6f6f6;
+  border-radius: 100px;
+  border: none;
+  color: #bdbdbd;
   font-size: 15px;
+  font-weight: 500;
+  padding: 16px;
   display: block;
 }
 
@@ -153,7 +168,7 @@ search label {
 }
 
 .steps {
-  width: 228px;
+  width: 332px;
   height: 22px;
   margin: 32px auto 0;
   display: flex;
@@ -166,17 +181,17 @@ search label {
 }
 
 .steps span {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #8e8e93;
+  width: 60px;
+  height: 8px;
+  border-radius: 5px;
+  background-color: #d9d9d9;
 }
 
 .steps .done {
   background-color: #1f3c58;
 }
 
-/* 2. Shared content and buttons */
+/* 2. Shared content and buttons --------------------------*/
 .screen-content {
   padding: 40px 24px;
   flex: 1;
@@ -303,29 +318,15 @@ search label {
   font-size: 14px;
 }
 
-/* Photo */
-.photo-action {
-  width: 330px;
-  height: 41px;
-  padding: 8px 12px;
-  border: 1px solid #8e8e93;
-  border-radius: 8px;
-  background-color: white;
-  color: #1f3c58;
-  display: block;
-  font-size: 13px;
-}
-
-.photo-action input {
-  display: none;
-}
-
-.photo-actions {
-  margin: 48px 0 0 24px;
-}
-
-.photo-actions .photo-action {
-  margin-bottom: 16px;
+/* in detail.html, confirmation.html */
+.success-mark {
+  width: 72px;
+  height: 72px;
+  border: 3px solid #3c6720;
+  border-radius: 50%;
+  color: #3c6720;
+  font-size: 48px;
+  text-align: center;
 }
 
 /* Error */

@@ -10,26 +10,26 @@
     />
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/contact.css" />
+    <script src="../js/global.js" defer></script>
+    <script src="../js/contact.js" defer></script>
   </head>
   <body>
     <main>
-      <!-- Task 12.4 -->
       <section id="contact" class="screen contact-page">
         <header class="site-header">
           <div class="topbar">
-            <a class="menu" href="#issue-type">
-              <span></span>
-              <span></span>
-              <span></span>
-            </a>
-            <a class="brand" href="#issue-type">FixIt</a>
             <img
               class="council-logo"
               src="../assets/council-logo.png"
               alt="Auckland Council"
             />
+            <a class="brand" href="issue-type.html">FixIt</a>
+            <button class="menu-button" aria-label="menu" type="button">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
-          <input class="search" type="search" placeholder="Search" />
           <div class="steps">
             <span class="done"></span>
             <span class="done"></span>
@@ -87,7 +87,9 @@
               />
               <p id="phone-error" class="error-message" role="alert" hidden></p>
             </div>
-            <a class="button continue" href="#confirmation">Continue <span class="arrow" aria-hidden="true">→</span></a>
+            <button class="button continue" type="submit">
+              Submit <span class="arrow" aria-hidden="true">→</span>
+            </button>
           </form>
         </div>
       </section>

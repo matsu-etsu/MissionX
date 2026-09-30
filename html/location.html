@@ -10,26 +10,26 @@
     />
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/location.css" />
+    <script src="../js/global.js" defer></script>
+    <script src="../js/location.js" defer></script>
   </head>
   <body>
     <main>
-      <!-- Task 12.3 -->
       <section id="location" class="screen location-page">
         <header class="site-header">
           <div class="topbar">
-            <a class="menu" href="#issue-type">
-              <span></span>
-              <span></span>
-              <span></span>
-            </a>
-            <a class="brand" href="#issue-type">FixIt</a>
             <img
               class="council-logo"
               src="../assets/council-logo.png"
               alt="Auckland Council"
             />
+            <a class="brand" href="issue-type.html">FixIt</a>
+            <button class="menu-button" aria-label="menu" type="button">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
-          <input class="search" type="search" placeholder="Search" />
           <div class="steps">
             <span class="done"></span>
             <span class="done"></span>
@@ -55,8 +55,12 @@
             <button class="button outline location-button" type="button">
               Use Current location
             </button>
-            <p class="error-message" role="alert" hidden>! Please choose location</p>
-            <a class="button continue" href="#contact">Continue <span class="arrow" aria-hidden="true">→</span></a>
+            <p class="error-message" role="alert" hidden>
+              ! Please choose location
+            </p>
+            <button class="button continue" type="button">
+              Continue <span class="arrow" aria-hidden="true">→</span>
+            </button>
           </form>
         </div>
       </section>

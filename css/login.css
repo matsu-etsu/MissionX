@@ -14,12 +14,6 @@
   margin-bottom: 16px;
 }
 
-.login-error-text {
-  margin: 4px 0;
-  color: #ff383c;
-  font-size: 11px;
-}
-
 .login-options-row {
   margin-top: 0;
   display: flex;
@@ -50,15 +44,17 @@
 }
 
 .login-success-bar {
+  height: 24px;
   margin: 8px 0 0;
   padding: 4px 12px;
   background-color: #b5ffc8;
   color: black;
   font-size: 12px;
+  visibility: hidden;
 }
 
 .login-success-bar + .login-form {
-  margin-top: 8px;
+  margin-top: 40px;
 }
 
 .loading-button {
@@ -69,5 +65,9 @@
 
 .logged-in-button {
   border-color: #3c6720;
+  background-color: #3c6720;
+}
+
+.logged-in-button:hover {
   background-color: #3c6720;
 }
