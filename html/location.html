@@ -3,67 +3,138 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FixIt | Details</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap"
-    />
+    <title>FixIt | Issue location</title>
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/location.css" />
     <script src="../js/global.js" defer></script>
     <script src="../js/location.js" defer></script>
   </head>
   <body>
-    <main>
-      <section id="location" class="screen location-page">
-        <header class="site-header">
-          <div class="topbar">
-            <img
-              class="council-logo"
-              src="../assets/council-logo.png"
-              alt="Auckland Council"
-            />
-            <a class="brand" href="issue-type.html">FixIt</a>
-            <button class="menu-button" aria-label="menu" type="button">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-          <div class="steps">
-            <span class="done"></span>
-            <span class="done"></span>
-            <span class="done"></span>
-            <span></span>
-            <span></span>
-          </div>
-        </header>
-        <div class="screen-content">
-          <h1 class="title">Where is the issue?</h1>
-          <form class="screen-form">
-            <input
-              class="field-input address"
-              type="text"
-              placeholder="478 Kiwi Road, Remuera, Auckland 1034"
-            />
-            <div class="map">
-              <img
-                src="../assets/map.png"
-                alt="Map shown in the original Figma design"
-              />
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="screen location-page">
+      <header class="site-header">
+        <div class="topbar">
+          <img
+            class="council-logo"
+            src="../assets/council-logo.png"
+            alt="Auckland Council"
+          />
+          <img
+            class="council-logo-large"
+            src="../assets/council-logo-large.png"
+            alt="Auckland Council"
+          />
+          <a class="brand" href="issue-type.html">FixIt</a>
+          <button
+            class="menu-button"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="main-menu"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+          <nav class="menu-list" id="main-menu" aria-label="Main menu" hidden>
+            <div class="menu-heading">
+              <strong>Menu</strong
+              ><button class="menu-close" type="button" aria-label="Close menu">
+                ×
+              </button>
             </div>
-            <button class="button outline location-button" type="button">
+            <ul>
+              <li>
+                <a href="history.html"
+                  ><img src="../assets/menu-reports.svg" alt="" />My Reports</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.aucklandcouncil.govt.nz/report-problem/Pages/default.aspx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="../assets/menu-contact.svg" alt="" />Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ourauckland.aucklandcouncil.govt.nz/welcome-to-auckland/your-city-your-voice/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="../assets/menu-about.svg" alt="" />About Us</a
+                >
+              </li>
+              <li>
+                <a href="login.html"
+                  ><img src="../assets/menu-login.svg" alt="" />Log in</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <p class="step-label">Step 3 of 5</p>
+        <div class="steps" aria-label="Step 3 of 5">
+          <span class="done"></span><span class="done"></span
+          ><span class="done"></span><span></span><span></span>
+        </div>
+      </header>
+      <main id="main-content" class="screen-content">
+        <h1 class="title">Where is the issue?</h1>
+        <form id="location-form" class="screen-form" novalidate>
+          <label class="visually-hidden" for="address"
+            >Address, landmark or coordinates</label
+          >
+          <input
+            id="address"
+            class="field-input"
+            type="text"
+            placeholder="Address, nearby landmark or coordinates"
+          />
+          <!-- Luka's update: This is a live Google map now. The simple place
+             search and current-location button match the class project. -->
+          <div class="map-actions">
+            <button id="find-button" class="button outline" type="button">
+              Find on map
+            </button>
+            <button id="locate-button" class="button outline" type="button">
               Use Current location
             </button>
-            <p class="error-message" role="alert" hidden>
-              ! Please choose location
-            </p>
-            <button class="button continue" type="button">
+          </div>
+          <div class="map">
+            <iframe
+              id="live-map"
+              title="Google map of the issue location"
+              src="https://maps.google.com/maps?q=Auckland%2C%20New%20Zealand&amp;output=embed"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <p id="map-status" class="help-text" role="status">
+            Find a place, then check the map before continuing.
+          </p>
+          <a
+            id="google-map-link"
+            class="help-text"
+            href="https://www.google.com/maps/search/?api=1&amp;query=Auckland%2C%20New%20Zealand"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Open a larger Google map</a
+          >
+          <p id="location-error" class="error-message" role="alert" hidden>
+            Please add the location.
+          </p>
+          <div class="actions">
+            <a
+              class="button outline back-button"
+              href="details.html"
+              aria-label="Back to issue details"
+              >←</a
+            >
+            <button class="button continue" type="submit">
               Continue <span class="arrow" aria-hidden="true">→</span>
             </button>
-          </form>
-        </div>
-      </section>
-    </main>
+          </div>
+        </form>
+      </main>
+    </div>
   </body>
 </html>

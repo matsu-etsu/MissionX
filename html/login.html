@@ -4,97 +4,117 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FixIt | Log in</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap"
-    />
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/login.css" />
     <script src="../js/global.js" defer></script>
     <script src="../js/login.js" defer></script>
   </head>
   <body>
-    <main>
-      <section id="login" class="screen login-page account-page">
-        <header class="site-header">
-          <div class="topbar">
-            <img
-              class="council-logo"
-              src="../assets/council-logo.png"
-              alt="Auckland Council"
-            />
-            <a class="brand" href="issue-type.html">FixIt</a>
-            <button class="menu-button">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-            <nav class="menu-list" id="main-menu" hidden>
-              <ul>
-                <li><a href="#home">Home</a></li>
-                <li>
-                  <a href="issue-type.html" class="menu-report">
-                    <span>FixIt</span>
-                    <span class="small-text-in-menu">-Report an issue</span></a
-                  >
-                </li>
-                <li><a href="history.html">My reports</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#help">Help</a></li>
-                <li><a href="#contact">Contact us</a></li>
-                <li><a href="login.html">Log in</a></li>
-              </ul>
-            </nav>
-          </div>
-        </header>
-        <div class="screen-content">
-          <h1 class="title">Log in</h1>
-          <p class="login-success-bar">
-            Login successful - Redirecting securely...
-          </p>
-          <form class="login-form">
-            <div class="field email-field">
-              <label class="field-label" for="login-email">Email address</label>
-              <input
-                class="field-input"
-                type="email"
-                id="login-email"
-                placeholder="lindaS@gmail.com"
-              />
-              <p id="email-error" class="error-message" role="alert" hidden></p>
+    <!-- Luka's update: kept original screen flow and colours, adding
+       links, forms, labels and back button -->
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="screen login-page">
+      <header class="site-header">
+        <div class="topbar">
+          <img
+            class="council-logo"
+            src="../assets/council-logo.png"
+            alt="Auckland Council"
+          />
+          <img
+            class="council-logo-large"
+            src="../assets/council-logo-large.png"
+            alt="Auckland Council"
+          />
+          <a class="brand" href="issue-type.html">FixIt</a>
+          <button
+            class="menu-button"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="main-menu"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+          <nav class="menu-list" id="main-menu" aria-label="Main menu" hidden>
+            <!-- Luka's update: I brought back the clean ver/final ver) dropdown, including
+               its heading, close button and four little icons. -->
+
+            <div class="menu-heading">
+              <strong>Menu</strong
+              ><button class="menu-close" type="button" aria-label="Close menu">
+                ×
+              </button>
             </div>
-            <div class="field">
-              <label class="field-label" for="login-password">Password</label>
-              <input
-                class="field-input"
-                type="password"
-                id="login-password"
-                placeholder="************"
-              />
-              <p
-                id="password-error"
-                class="error-message"
-                role="alert"
-                hidden
-              ></p>
-            </div>
-            <div class="login-options-row">
-              <label class="login-options"
-                ><input type="checkbox" checked />Remember me</label
-              >
-              <a class="forgot" href="#login">Forgot password?</a>
-            </div>
-            <p id="login-error" class="error-message" role="alert" hidden></p>
-            <button class="button login-button" type="submit">Log in</button>
-          </form>
-          <div class="account-footer">
-            <p class="login-note">No account yet?</p>
-            <a class="small-link create-link" href="register.html"
-              >Create account</a
-            >
-          </div>
+            <ul>
+              <li>
+                <a href="history.html"
+                  ><img src="../assets/menu-reports.svg" alt="" />My Reports</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.aucklandcouncil.govt.nz/report-problem/Pages/default.aspx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="../assets/menu-contact.svg" alt="" />Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ourauckland.aucklandcouncil.govt.nz/welcome-to-auckland/your-city-your-voice/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="../assets/menu-about.svg" alt="" />About Us</a
+                >
+              </li>
+              <li>
+                <a href="login.html"
+                  ><img src="../assets/menu-login.svg" alt="" />Log in</a
+                >
+              </li>
+            </ul>
+          </nav>
         </div>
-      </section>
-    </main>
+      </header>
+      <main id="main-content" class="screen-content">
+        <h1 class="title">Log in</h1>
+        <p class="help-text">
+          This is a front-end demo. It does not connect to a real Council
+          account.
+        </p>
+        <p id="login-message" class="success-message" role="status" hidden></p>
+        <form id="login-form" class="login-form">
+          <div class="field">
+            <label class="field-label" for="login-email">Email address</label
+            ><input
+              class="field-input"
+              type="email"
+              id="login-email"
+              autocomplete="email"
+              placeholder="lindaS@gmail.com"
+              required
+            />
+          </div>
+          <div class="field">
+            <label class="field-label" for="login-password">Password</label
+            ><input
+              class="field-input"
+              type="password"
+              id="login-password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+          <label class="remember"><input type="checkbox" /> Remember me</label>
+          <button class="button login-button" type="submit">Log in</button>
+        </form>
+        <div class="account-footer">
+          <p>No account yet?</p>
+          <a href="register.html">Create account</a>
+        </div>
+      </main>
+    </div>
   </body>
 </html>

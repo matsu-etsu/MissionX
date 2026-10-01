@@ -1,52 +1,73 @@
+/* Luka's update: Etsuko's history sample stays, and the layout wraps
+   cleanly at smaller widths. */
 .counts {
-  height: 39px;
-  margin-top: 32px;
-  padding: 0 8px;
-  background-color: #d5e6fd;
-  color: black;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 15px;
+  gap: 0;
+  padding: 4px;
+  background: #d5e6fd;
+  border: 1px solid #8e8e93;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+/* Luka's update: The status labels are buttons now, so the selected
+   filter has a clear state for both touch and keyboard users. */
+.filter-button {
+  flex: 1;
+  min-height: 36px;
+  padding: 4px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #1f3c58;
+  font-weight: bold;
+}
+
+.filter-button.active {
+  background: white;
+  box-shadow: 0 1px 3px #a5afbd;
 }
 
 .report-list {
-  margin-top: 32px;
+  margin-top: 24px;
 }
 
 .history-row {
-  min-height: 116px;
-  margin-bottom: 12px;
-  padding: 8px 0;
+  min-height: 112px;
+  padding: 16px 0;
   border-bottom: 1px solid #8e8e93;
-  color: black;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  gap: 12px;
 }
 
 .history-row h2 {
-  width: 149px;
-  margin: 0 0 4px 48px;
-  font-size: 15px;
-  font-weight: normal;
+  margin: 0 0 8px;
+  font-size: 16px;
 }
 
 .history-row p {
-  margin: 4px 0 0 72px;
+  margin: 4px 0;
   font-size: 13px;
 }
 
 .badge {
-  width: 157px;
-  height: 41px;
-  padding: 12px 8px;
-  background-color: #ffe987;
-  color: #1f3c58;
-  flex-shrink: 0;
-  font-size: 13px;
+  min-width: 96px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #ffe987;
   text-align: center;
+  font-size: 13px;
 }
 
 .badge.resolved {
-  background-color: #b5ffc8;
+  background: #b5ffc8;
+}
+
+@media screen and (max-width: 360px) {
+  .history-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }

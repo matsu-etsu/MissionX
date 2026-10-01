@@ -3,96 +3,157 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FixIt | Contact</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap"
-    />
+    <title>FixIt | Contact options</title>
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/contact.css" />
     <script src="../js/global.js" defer></script>
     <script src="../js/contact.js" defer></script>
   </head>
   <body>
-    <main>
-      <section id="contact" class="screen contact-page">
-        <header class="site-header">
-          <div class="topbar">
-            <img
-              class="council-logo"
-              src="../assets/council-logo.png"
-              alt="Auckland Council"
-            />
-            <a class="brand" href="issue-type.html">FixIt</a>
-            <button class="menu-button" aria-label="menu" type="button">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-          <div class="steps">
-            <span class="done"></span>
-            <span class="done"></span>
-            <span class="done"></span>
-            <span class="done"></span>
-            <span></span>
-          </div>
-        </header>
-        <div class="screen-content">
-          <h1 class="title">How do we contact you?</h1>
-          <form class="screen-form contact-form">
-            <div class="contact-options">
-              <a class="button outline contact-choice selected" href="#contact"
-                >Add contact details</a
-              >
-              <a
-                class="button outline contact-choice anonymous"
-                href="#confirmation"
-                >Report anonymously</a
-              >
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="screen contact-page">
+      <header class="site-header">
+        <div class="topbar">
+          <img
+            class="council-logo"
+            src="../assets/council-logo.png"
+            alt="Auckland Council"
+          />
+          <img
+            class="council-logo-large"
+            src="../assets/council-logo-large.png"
+            alt="Auckland Council"
+          />
+          <a class="brand" href="issue-type.html">FixIt</a>
+          <button
+            class="menu-button"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="main-menu"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+          <nav class="menu-list" id="main-menu" aria-label="Main menu" hidden>
+            <div class="menu-heading">
+              <strong>Menu</strong
+              ><button class="menu-close" type="button" aria-label="Close menu">
+                ×
+              </button>
             </div>
+            <ul>
+              <li>
+                <a href="history.html"
+                  ><img src="../assets/menu-reports.svg" alt="" />My Reports</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.aucklandcouncil.govt.nz/report-problem/Pages/default.aspx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="../assets/menu-contact.svg" alt="" />Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ourauckland.aucklandcouncil.govt.nz/welcome-to-auckland/your-city-your-voice/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="../assets/menu-about.svg" alt="" />About Us</a
+                >
+              </li>
+              <li>
+                <a href="login.html"
+                  ><img src="../assets/menu-login.svg" alt="" />Log in</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <p class="step-label">Step 4 of 5</p>
+        <div class="steps" aria-label="Step 4 of 5">
+          <span class="done"></span><span class="done"></span
+          ><span class="done"></span><span class="done"></span><span></span>
+        </div>
+      </header>
+      <main id="main-content" class="screen-content">
+        <h1 class="title">How do we keep you updated?</h1>
+        <form id="contact-form" class="screen-form">
+          <!-- Luka's update: These are real radio options, so anonymous reports
+             hide the contact fields instead of following a fake anchor. -->
+          <fieldset class="contact-options">
+            <legend class="visually-hidden">Choose how we contact you</legend>
+            <label class="contact-choice"
+              ><span
+                ><strong>Keep me updated</strong
+                ><small>We’ll contact you by email or text</small></span
+              ><input
+                type="radio"
+                name="contact-choice"
+                value="contact"
+                checked
+            /></label>
+            <label class="contact-choice"
+              ><span
+                ><strong>Stay anonymous</strong
+                ><small>Continue without contact details</small></span
+              ><input
+                id="anonymous"
+                type="radio"
+                name="contact-choice"
+                value="anonymous"
+            /></label>
+          </fieldset>
+          <div id="contact-fields">
             <div class="field">
-              <label class="field-label" for="contact-contact-name"
-                >Full name</label
-              >
-              <input
+              <label class="field-label" for="contact-name">Full name</label
+              ><input
                 class="field-input"
                 type="text"
-                id="contact-contact-name"
+                id="contact-name"
+                autocomplete="name"
                 placeholder="e.g. Linda Smith"
               />
-              <p id="name-error" class="error-message" role="alert" hidden></p>
             </div>
             <div class="field">
-              <label class="field-label" for="contact-contact-email"
+              <label class="field-label" for="contact-email"
                 >Email address</label
-              >
-              <input
+              ><input
                 class="field-input"
                 type="email"
-                id="contact-contact-email"
+                id="contact-email"
+                autocomplete="email"
                 placeholder="lindaS@gmail.com"
+                required
               />
-              <p id="email-error" class="error-message" role="alert" hidden></p>
             </div>
             <div class="field">
-              <label class="field-label" for="contact-contact-phone"
-                >Phone number</label
-              >
-              <input
+              <label class="field-label" for="contact-phone">Phone number</label
+              ><input
                 class="field-input"
                 type="tel"
-                id="contact-contact-phone"
+                id="contact-phone"
+                autocomplete="tel"
                 placeholder="+64 0248573752"
               />
-              <p id="phone-error" class="error-message" role="alert" hidden></p>
             </div>
+          </div>
+          <p id="contact-error" class="error-message" role="alert" hidden></p>
+          <div class="actions">
+            <a
+              class="button outline back-button"
+              href="location.html"
+              aria-label="Back to location"
+              >←</a
+            >
             <button class="button continue" type="submit">
               Submit <span class="arrow" aria-hidden="true">→</span>
             </button>
-          </form>
-        </div>
-      </section>
-    </main>
+          </div>
+        </form>
+      </main>
+    </div>
   </body>
 </html>

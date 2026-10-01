@@ -1,0 +1,109 @@
+/* Luka's update: The photo state sits below the description in the
+   revised design, and its controls can grow with the screen. */
+.details-box {
+  height: 236px;
+  resize: vertical;
+}
+
+#character-count {
+  margin: 8px 0 16px;
+  text-align: right;
+}
+
+.photo-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.photo-action {
+  height: 42px;
+  padding: 6px 16px;
+  border: 1px solid #8e8e93;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.photo-action:hover,
+.photo-action:focus-within {
+  background: #d5e6fd;
+}
+
+.photo-action img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Luka's update: Three equal photo spaces match the clean ver screen,
+   even while all three are still empty. */
+.photo-previews {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 304px;
+  width: 100%;
+  margin: 24px auto 0;
+}
+
+.photo-slot {
+  position: relative;
+  flex: 0 0 80px;
+  height: 80px;
+  background: #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-slot img {
+  width: 64px;
+  height: 64px;
+}
+
+.photo-name {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background: white;
+  font-size: 10px;
+  text-align: center;
+}
+
+.remove-photo {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  border: 1px solid #1f3c58;
+  border-radius: 50%;
+  background: white;
+  color: #1f3c58;
+  font-size: 20px;
+  line-height: 1;
+}
+
+@media screen and (max-width: 340px) {
+  .photo-previews {
+    gap: 12px;
+  }
+
+  .photo-slot {
+    flex-basis: 64px;
+    height: 64px;
+  }
+
+  .photo-slot img {
+    width: 52px;
+    height: 52px;
+  }
+}

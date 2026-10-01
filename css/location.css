@@ -1,23 +1,32 @@
-.address {
-  margin-top: 24px;
+/* Luka's update: The live map now fits narrow phones, and the two ways
+   to choose a location stay easy to tap. */
+.map-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.map-actions .button {
+  flex: 1;
 }
 
 .map {
-  width: 332px;
   height: 270px;
-  margin: 40px 0 0 16px;
+  margin-top: 16px;
   border: 1px solid #8e8e93;
+  border-radius: 12px;
   overflow: hidden;
 }
 
-.map img {
-  width: 333px;
-  height: 310px;
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
-.location-button {
-  width: 157px;
-  height: 41px;
-  margin: 32px auto 0;
-  padding: 8px 0;
+@media screen and (max-width: 360px) {
+  .map-actions {
+    flex-direction: column;
+  }
 }

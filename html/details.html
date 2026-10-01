@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FixIt | Describe the issue</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/details.css" />
+    <script src="../js/global.js" defer></script>
+    <script src="../js/details.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="screen details-page">
+      <header class="site-header">
+        <div class="topbar">
+          <img
+            class="council-logo"
+            src="../assets/council-logo.png"
+            alt="Auckland Council"
+          />
+          <img
+            class="council-logo-large"
+            src="../assets/council-logo-large.png"
+            alt="Auckland Council"
+          />
+          <a class="brand" href="issue-type.html">FixIt</a>
+          <button
+            class="menu-button"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="main-menu"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+          <nav class="menu-list" id="main-menu" aria-label="Main menu" hidden>
+            <div class="menu-heading">
+              <strong>Menu</strong
+              ><button class="menu-close" type="button" aria-label="Close menu">
+                ×
+              </button>
+            </div>
+            <ul>
+              <li>
+                <a href="history.html"
+                  ><img src="../assets/menu-reports.svg" alt="" />My Reports</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.aucklandcouncil.govt.nz/report-problem/Pages/default.aspx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="../assets/menu-contact.svg" alt="" />Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ourauckland.aucklandcouncil.govt.nz/welcome-to-auckland/your-city-your-voice/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="../assets/menu-about.svg" alt="" />About Us</a
+                >
+              </li>
+              <li>
+                <a href="login.html"
+                  ><img src="../assets/menu-login.svg" alt="" />Log in</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <p class="step-label">Step 2 of 5</p>
+        <div class="steps" aria-label="Step 2 of 5">
+          <span class="done"></span><span class="done"></span><span></span
+          ><span></span><span></span>
+        </div>
+      </header>
+      <main id="main-content" class="screen-content">
+        <h1 class="title">Tell us about it</h1>
+        <form id="details-form" class="screen-form" novalidate>
+          <label class="visually-hidden" for="description">Issue details</label>
+          <textarea
+            id="description"
+            class="details-box"
+            maxlength="500"
+            placeholder="Enter issue details (e.g. I saw a fallen tree in the middle of the lane)"
+          ></textarea>
+          <p id="character-count" class="help-text">0 / 500 characters</p>
+          <p id="details-error" class="error-message" role="alert" hidden>
+            Please describe the issue.
+          </p>
+          <div class="photo-actions">
+            <label class="photo-action" for="photo-input"
+              ><img src="../assets/plus.svg" alt="" />Add photos</label
+            >
+            <input
+              id="photo-input"
+              type="file"
+              accept=".jpg,.jpeg,.png"
+              multiple
+              class="visually-hidden"
+            />
+            <label class="photo-action" for="camera-input"
+              ><img src="../assets/camera.svg" alt="" />Take new photos</label
+            >
+            <input
+              id="camera-input"
+              type="file"
+              accept="image/*"
+              capture="environment"
+              class="visually-hidden"
+            />
+          </div>
+          <p id="photo-status" class="help-text" role="status">
+            Photos are optional. Up to 3 JPG or PNG files, each under 3 MB.
+          </p>
+          <!-- Luka's update: Three preview spaces stay visible like the clean
+             design, even before anyone chooses their photos. -->
+          <div class="photo-previews" aria-label="Up to three photo previews">
+            <div class="photo-slot">
+              <img src="../assets/photo-placeholder.svg" alt="" /><span
+                class="photo-name"
+                hidden
+              ></span
+              ><button
+                class="remove-photo"
+                type="button"
+                aria-label="Remove photo 1"
+                hidden
+              >
+                ×
+              </button>
+            </div>
+            <div class="photo-slot">
+              <img src="../assets/photo-placeholder.svg" alt="" /><span
+                class="photo-name"
+                hidden
+              ></span
+              ><button
+                class="remove-photo"
+                type="button"
+                aria-label="Remove photo 2"
+                hidden
+              >
+                ×
+              </button>
+            </div>
+            <div class="photo-slot">
+              <img src="../assets/photo-placeholder.svg" alt="" /><span
+                class="photo-name"
+                hidden
+              ></span
+              ><button
+                class="remove-photo"
+                type="button"
+                aria-label="Remove photo 3"
+                hidden
+              >
+                ×
+              </button>
+            </div>
+          </div>
+          <div class="actions">
+            <a
+              class="button outline back-button"
+              href="issue-type.html"
+              aria-label="Back to issue type"
+              >←</a
+            >
+            <button class="button continue" type="submit">
+              Continue <span class="arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

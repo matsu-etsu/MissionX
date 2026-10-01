@@ -1,352 +1,325 @@
-/* 1. Page and header ---------------------------------*/
+/* Luka's update:  loosened the
+layout so it works on phones and desktops without a fixed page height. */
 * {
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
-  background-color: white;
+  background: #f5f7fa;
   color: #1f3c58;
-  font-family: Inter, Arial, sans-serif;
+  font-family: Arial, sans-serif;
+}
+a {
+  color: #1f3c58;
+}
+button,
+input,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+[hidden] {
+  display: none !important;
 }
 
-a {
-  text-decoration: none;
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  background: white;
+  padding: 12px;
+  z-index: 30;
+}
+.skip-link:focus {
+  left: 8px;
+}
+:focus-visible {
+  outline: 3px solid #ed8b23;
+  outline-offset: 3px;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
 
 .screen {
   width: 100%;
-  max-width: 402px;
-  min-height: 874px;
-  margin: 0 auto 32px;
-  background-color: white;
+  max-width: 720px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: white;
   display: flex;
   flex-direction: column;
 }
 
-.long-screen {
-  min-height: 1083px;
+.site-header {
+  padding: 24px 24px 0;
 }
-
 .topbar {
-  height: 96px;
-  padding: 0 16px;
+  min-height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
 }
-
-.long-screen .topbar {
-  height: 80px;
-}
-
-.photo-state .topbar {
-  height: 112px;
-}
-
 .council-logo {
   width: 32px;
   height: 40px;
-  margin: 20px;
+  object-fit: contain;
 }
-
-/* Hamburger menu */
-.menu-button {
-  width: 60px;
-  height: 56px;
-  padding: 16px;
-  display: block;
-  border: none;
-  background: transparent;
-  cursor: pointer;
+.council-logo-large {
+  display: none;
 }
-
-.menu-button span {
-  width: 24px;
-  height: 2px;
-  margin: 4px 0;
-  display: block;
-  background-color: #1f3c58;
-}
-
-.menu-list ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu-list {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 45%;
-  padding: 80px 30px 18px 30px;
-  background-color: rgba(213, 230, 253, 0.9);
-  z-index: 10;
-}
-
-.menu-list a {
-  display: flex;
-  justify-content: left;
-  color: #1f3c58;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 33px;
-}
-
-.menu-report {
-  display: flex;
-  flex-direction: column;
-}
-
-.menu-report span {
-  line-height: 18px;
-}
-
-.small-text-in-menu {
-  font-size: 13px;
-  font-weight: normal;
-}
-
-.menu-button.open span:first-child {
-  transform: translateY(5.8px) rotate(45deg);
-}
-
-.menu-button.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-button.open span:last-child {
-  transform: translateY(-5.8px) rotate(-45deg);
-}
-
-.menu-button.open {
-  z-index: 20;
-}
-
 .brand {
   color: #1f3c58;
   font-size: 32px;
   font-weight: bold;
   text-decoration: none;
 }
-
-/* Search */
-search {
-  display: flex;
-  justify-content: center;
+.menu-button {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: white;
+  color: #1f3c58;
+  font-size: 24px;
 }
 
-.visually-hidden {
-  border: 0 !important;
-  clip: rect(0, 0, 0, 0) !important;
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  position: absolute !important;
-  white-space: nowrap !important;
-  width: 1px !important;
+/* Luka's update: The dropdown follows the clean ver menu: pale blue,
+   four icon links and a proper close button. */
+.menu-list {
+  position: absolute;
+  top: 52px;
+  right: 0;
+  width: 304px;
+  max-width: 100%;
+  min-height: 390px;
+  padding: 20px 24px;
+  background: #e1ebf9;
+  border-radius: 4px;
+  box-shadow: 4px 4px 8px #999999;
+  z-index: 10;
 }
-
-#search-input {
-  width: 343px;
-  height: 50px;
-  background: #f6f6f6;
-  border-radius: 100px;
-  border: none;
-  color: #bdbdbd;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 16px;
-  display: block;
-}
-
-.long-screen .search {
-  margin-top: 8px;
-}
-
-.steps {
-  width: 332px;
-  height: 22px;
-  margin: 32px auto 0;
+.menu-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 24px;
+  font-size: 32px;
+}
+.menu-close {
+  border: 0;
+  background: transparent;
+  color: #1f3c58;
+  font-size: 32px;
+  line-height: 1;
+}
+.menu-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu-list a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 50px;
+  padding: 8px 0;
+  text-decoration: none;
+  font-weight: bold;
+}
+.menu-list img {
+  width: 24px;
+  height: 24px;
+}
+.menu-list a[target="_blank"] {
+  text-decoration: underline;
+}
+.menu-list a:hover {
+  background: #d5e6fd;
 }
 
-.long-screen .steps {
-  margin-top: 40px;
+.search-form {
+  margin-top: 12px;
 }
-
+.search-form input {
+  width: 100%;
+  height: 50px;
+  padding: 12px 16px;
+  border: 1px solid #dddddd;
+  border-radius: 25px;
+  background: #f6f6f6;
+}
+.step-label {
+  margin: 16px 0;
+  font-weight: bold;
+}
+.steps {
+  display: flex;
+  gap: 8px;
+  margin: 0 8px;
+}
 .steps span {
-  width: 60px;
+  flex: 1;
   height: 8px;
-  border-radius: 5px;
-  background-color: #d9d9d9;
+  border-radius: 8px;
+  background: #d9d9d9;
 }
-
 .steps .done {
-  background-color: #1f3c58;
+  background: #1f3c58;
 }
 
-/* 2. Shared content and buttons --------------------------*/
 .screen-content {
-  padding: 40px 24px;
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 32px 24px;
 }
-
-.long-screen .screen-content {
-  padding-top: 52px;
-  padding-bottom: 56px;
-}
-
-.details-page .screen-content {
-  padding-top: 36px;
-}
-
-.location-page .screen-content {
-  padding-top: 48px;
-}
-
-.account-page .screen-content,
-.history-page .screen-content {
-  padding-top: 32px;
-}
-
-.register-page .screen-content,
-.login-state .screen-content {
-  padding-top: 40px;
-}
-
-.photo-state .screen-content {
-  padding-top: 56px;
-  padding-bottom: 24px;
-}
-
-.contact-page .screen-content {
-  padding-bottom: 44px;
-}
-
 .title {
-  margin: 0;
+  margin: 0 0 24px;
   font-size: 24px;
-  line-height: 29px;
+  line-height: 1.25;
 }
-
-.button {
-  height: 44px;
-  padding: 12px 16px;
-  border: 1px solid #1f3c58;
-  border-radius: 8px;
-  background-color: #1f3c58;
-  color: white;
-  display: block;
-  font-family: Inter, Arial, sans-serif;
-  font-size: 15px;
-  text-align: center;
-  text-decoration: none;
-}
-
-.button:hover {
-  background-color: #365f84;
-}
-
-.outline {
-  background-color: white;
-  color: #1f3c58;
-}
-
-.outline:hover {
-  background-color: #d5e6fd;
-}
-
-.continue {
-  width: 100%;
-  margin-top: auto;
-}
-
-.arrow {
-  margin-left: 8px;
-}
-
 .screen-form {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
-
-/* input fields */
 .field {
-  margin-bottom: 16px;
+  margin: 0 0 16px;
 }
-
 .field-label {
   display: block;
   margin-bottom: 8px;
-  font-size: 14px;
   font-weight: bold;
+  font-size: 14px;
 }
-
-.field-input {
+.field-input,
+.details-box {
   width: 100%;
-  height: 44px;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #8e8e93;
   border-radius: 8px;
-  font-family: Inter, Arial, sans-serif;
-  font-size: 15px;
-}
-
-/* Account screens */
-.account-footer {
-  margin-top: 16px;
-  text-align: center;
-}
-
-.account-footer p {
-  margin: 0;
-  color: #8e8e93;
-  font-size: 12px;
-}
-
-.account-footer a {
+  background: white;
   color: #1f3c58;
+}
+.field-input {
+  min-height: 44px;
+}
+
+.button {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid #1f3c58;
+  border-radius: 8px;
+  background: #1f3c58;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+.button:hover {
+  background: #365f84;
+}
+.outline {
+  background: white;
+  color: #1f3c58;
+}
+.outline:hover {
+  background: #d5e6fd;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 32px;
+}
+.back-button {
+  width: 48px;
+  flex-shrink: 0;
+  font-size: 22px;
+}
+.continue {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  white-space: nowrap;
+}
+.arrow {
+  margin-left: 0;
+  font-size: 20px;
+  line-height: 0;
+}
+.error-message {
+  margin: 8px 0;
+  color: #a11919;
   font-size: 14px;
 }
-
-/* in detail.html, confirmation.html */
-.success-mark {
-  width: 72px;
-  height: 72px;
-  border: 3px solid #3c6720;
-  border-radius: 50%;
-  color: #3c6720;
-  font-size: 48px;
+.help-text {
+  color: #525b66;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.account-footer {
+  margin-top: 40px;
   text-align: center;
 }
-
-/* Error */
-.error-message {
-  margin: 4px 0;
-  color: #ff383c;
-  font-size: 11px;
+.account-footer p {
+  margin-bottom: 4px;
 }
 
-/* Responsive Web Development lesson: keep the design within the viewport. */
-@media screen and (max-width: 402px) {
-  .search {
-    width: 85%;
+/* Luka's update: Mobile still matches the 402px Figma screen; desktop gets
+a comfortable centre column. This is our media-query lesson in action. */
+@media screen and (min-width: 800px) {
+  .screen {
+    max-width: none;
   }
-
-  .field-input,
-  .details-box,
-  .photo-action,
-  .map,
-  .photo-card {
-    max-width: 90%;
+  .site-header {
+    padding: 24px 48px 0;
+  }
+  .topbar {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .council-logo {
+    display: none;
+  }
+  .council-logo-large {
+    display: block;
+    order: 3;
+    width: 110px;
+    height: 56px;
+    object-fit: contain;
+  }
+  .menu-button {
+    order: 1;
+  }
+  .brand {
+    order: 2;
+    margin-left: 24px;
+    margin-right: auto;
+  }
+  .screen-content {
+    width: 100%;
+    max-width: 680px;
+    margin: 32px auto;
+  }
+  .search-form {
+    max-width: 400px;
+    margin: 12px auto 0;
+  }
+  .step-label,
+  .steps {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

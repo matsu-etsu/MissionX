@@ -3,59 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FixIt | Confirmation</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap"
-    />
+    <title>FixIt | Report saved</title>
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/confirmation.css" />
     <script src="../js/global.js" defer></script>
     <script src="../js/confirmation.js" defer></script>
   </head>
   <body>
-    <main>
-      <section id="confirmation" class="screen confirmation-page">
-        <header class="site-header">
-          <div class="topbar">
-            <img
-              class="council-logo"
-              src="../assets/council-logo.png"
-              alt="Auckland Council"
-            />
-            <a class="brand" href="issue-type.html">FixIt</a>
-            <button class="menu-button" aria-label="menu" type="button">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-          <search>
-            <form action="./search/">
-              <label for="search-input" class="visually-hidden">Search</label>
-              <input
-                type="search"
-                id="search-input"
-                name="q"
-                placeholder="Search"
-              />
-            </form>
-          </search>
-          <div class="steps">
-            <span class="done"></span>
-            <span class="done"></span>
-            <span class="done"></span>
-            <span class="done"></span>
-            <span class="done"></span>
-          </div>
-        </header>
-        <div class="screen-content">
-          <h1 class="title">Report received!</h1>
-          <div class="success-mark">✓</div>
-          <div class="reference">Reference number: XWFGBE</div>
-          <a class="button outline home-button" href="#issue-type">Home page</a>
+    <!-- Luka's update: original screen flow and colours are kept, and made the
+       links, forms, labels and back button work -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="screen confirmation-page">
+      <header class="site-header">
+        <div class="topbar">
+          <img
+            class="council-logo"
+            src="../assets/council-logo.png"
+            alt="Auckland Council"
+          />
+          <img
+            class="council-logo-large"
+            src="../assets/council-logo-large.png"
+            alt="Auckland Council"
+          />
+          <a class="brand" href="issue-type.html">FixIt</a>
+          <button
+            class="menu-button"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="main-menu"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+          <nav class="menu-list" id="main-menu" aria-label="Main menu" hidden>
+            <!-- Luka's update: I brought back the clean ver dropdown, including
+               its heading, close button and four little icons. -->
+            <div class="menu-heading">
+              <strong>Menu</strong
+              ><button class="menu-close" type="button" aria-label="Close menu">
+                ×
+              </button>
+            </div>
+            <ul>
+              <li>
+                <a href="history.html"
+                  ><img src="../assets/menu-reports.svg" alt="" />My Reports</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.aucklandcouncil.govt.nz/report-problem/Pages/default.aspx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="../assets/menu-contact.svg" alt="" />Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ourauckland.aucklandcouncil.govt.nz/welcome-to-auckland/your-city-your-voice/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="../assets/menu-about.svg" alt="" />About Us</a
+                >
+              </li>
+              <li>
+                <a href="login.html"
+                  ><img src="../assets/menu-login.svg" alt="" />Log in</a
+                >
+              </li>
+            </ul>
+          </nav>
         </div>
-      </section>
-    </main>
+
+        <p class="step-label">Step 5 of 5</p>
+        <div class="steps" aria-label="Step 5 of 5">
+          <span class="done"></span><span class="done"></span
+          ><span class="done"></span><span class="done"></span
+          ><span class="done"></span>
+        </div>
+      </header>
+      <main id="main-content" class="screen-content">
+        <h1 class="title">Report saved!</h1>
+        <div class="success-mark" aria-hidden="true">✓</div>
+        <p class="reference">
+          Reference number: <strong id="reference-number"></strong>
+        </p>
+        <p id="receipt-message" class="receipt-note">
+          Thanks for helping care for our city. Keep this reference for your
+          demo report.
+        </p>
+        <p class="help-text">
+          Classroom prototype: this report has not been sent to Auckland
+          Council.
+        </p>
+        <a class="button outline home-button" href="issue-type.html"
+          >Home page</a
+        >
+        <a class="history-link" href="history.html">View My reports</a>
+      </main>
+    </div>
   </body>
 </html>

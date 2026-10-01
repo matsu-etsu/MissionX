@@ -3,78 +3,150 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FixIt | Select Issue Type</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap"
-    />
+    <title>FixIt | Select issue type</title>
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/issue-type.css" />
     <script src="../js/global.js" defer></script>
     <script src="../js/issue-type.js" defer></script>
   </head>
   <body>
-    <main>
-      <!-- Task 12.1 -->
-      <section id="issue-type" class="screen long-screen">
-        <header class="site-header">
-          <div class="topbar">
-            <img
-              class="council-logo"
-              src="../assets/council-logo.png"
-              alt="Auckland Council"
-            />
-            <a class="brand" href="issue-type.html">FixIt</a>
-            <button class="menu-button" aria-label="menu" type="button">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-          <search>
-            <form action="./search/">
-              <label for="search-input" class="visually-hidden">Search</label>
-              <input
-                type="search"
-                id="search-input"
-                name="q"
-                placeholder="Search"
-              />
-            </form>
-          </search>
-          <div class="steps">
-            <span class="done"></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </header>
-        <div class="screen-content">
-          <h1 class="title">Select issue type</h1>
-          <div class="issue-list">
-            <button type="button" class="issue selected">Graffiti</button>
-            <button type="button" class="issue">Full rubbish bin</button>
-            <button type="button" class="issue">Blocked drain</button>
-            <button type="button" class="issue">Abandoned trolley</button>
-            <button type="button" class="issue">Broken Streetlight</button>
-            <button type="button" class="issue">Illegal dumping</button>
-            <button type="button" class="issue">Playground damage</button>
-            <button type="button" class="issue">Fallen trees</button>
-            <button type="button" class="issue more">
-              Something Else
-              <span class="issue-note"
-                >Choose this if you are looking for a different report
-                type</span
-              >
-            </button>
-          </div>
-          <p class="error-message" role="alert" hidden>! Please select an issue type</p>
-          <button class="button continue" type="button">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="screen issue-type-page">
+      <header class="site-header">
+        <div class="topbar">
+          <img
+            class="council-logo"
+            src="../assets/council-logo.png"
+            alt="Auckland Council"
+          />
+          <img
+            class="council-logo-large"
+            src="../assets/council-logo-large.png"
+            alt="Auckland Council"
+          />
+          <a class="brand" href="issue-type.html">FixIt</a>
+          <button
+            class="menu-button"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="main-menu"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+          <nav class="menu-list" id="main-menu" aria-label="Main menu" hidden>
+            <div class="menu-heading">
+              <strong>Menu</strong
+              ><button class="menu-close" type="button" aria-label="Close menu">
+                ×
+              </button>
+            </div>
+            <ul>
+              <li>
+                <a href="history.html"
+                  ><img src="../assets/menu-reports.svg" alt="" />My Reports</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.aucklandcouncil.govt.nz/report-problem/Pages/default.aspx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="../assets/menu-contact.svg" alt="" />Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ourauckland.aucklandcouncil.govt.nz/welcome-to-auckland/your-city-your-voice/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="../assets/menu-about.svg" alt="" />About Us</a
+                >
+              </li>
+              <li>
+                <a href="login.html"
+                  ><img src="../assets/menu-login.svg" alt="" />Log in</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <form class="search-form" action="issue-type.html" role="search">
+          <label class="visually-hidden" for="search-input"
+            >Search issue types</label
+          >
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Search"
+            name="q"
+          />
+        </form>
+        <p class="step-label">Step 1 of 5</p>
+        <div class="steps" aria-label="Step 1 of 5">
+          <span class="done"></span><span></span><span></span><span></span
+          ><span></span>
+        </div>
+      </header>
+      <main id="main-content" class="screen-content">
+        <h1 class="title">Select issue type</h1>
+        <!-- Luka's update: Radio choices use the same big rows Etsuko designed,
+           with a visible selected state and a real group label. -->
+        <form id="issue-form" class="screen-form" novalidate>
+          <fieldset class="issue-list">
+            <legend class="visually-hidden">Choose one issue type</legend>
+            <label class="issue"
+              ><span>Abandoned trolley</span
+              ><input type="radio" name="issue" value="Abandoned trolley"
+            /></label>
+            <label class="issue"
+              ><span>Blocked drain</span
+              ><input type="radio" name="issue" value="Blocked drain"
+            /></label>
+            <label class="issue"
+              ><span>Graffiti</span
+              ><input type="radio" name="issue" value="Graffiti"
+            /></label>
+            <label class="issue"
+              ><span>Full rubbish bin</span
+              ><input type="radio" name="issue" value="Full rubbish bin"
+            /></label>
+            <label class="issue"
+              ><span>Broken Streetlight</span
+              ><input type="radio" name="issue" value="Broken Streetlight"
+            /></label>
+            <label class="issue"
+              ><span>Illegal dumping</span
+              ><input type="radio" name="issue" value="Illegal dumping"
+            /></label>
+            <label class="issue"
+              ><span>Playground damage</span
+              ><input type="radio" name="issue" value="Playground damage"
+            /></label>
+            <label class="issue"
+              ><span>Fallen trees</span
+              ><input type="radio" name="issue" value="Fallen trees"
+            /></label>
+            <label class="issue more"
+              ><span
+                >Something Else<br /><small class="help-text"
+                  >Choose this if you are looking for a different report
+                  type</small
+                ></span
+              ><input type="radio" name="issue" value="Something Else"
+            /></label>
+          </fieldset>
+          <p id="issue-error" class="error-message" role="alert" hidden>
+            Please select an issue type.
+          </p>
+          <div class="actions">
+            <button class="button continue" type="submit">
               Continue <span class="arrow" aria-hidden="true">→</span>
             </button>
-        </div>
-      </section>
-    </main>
+          </div>
+        </form>
+      </main>
+    </div>
   </body>
 </html>

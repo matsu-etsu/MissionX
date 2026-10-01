@@ -1,28 +1,17 @@
+/* Luka's update: Etsuko's account fields now share the form spacing
+   used across the report screens. */
 .register-form {
-  margin-top: 48px;
-}
-
-.register-form .field {
-  margin-bottom: 0;
+  margin-top: 24px;
 }
 
 .register-button {
-  width: 157px;
-  height: 41px;
-  margin: 80px auto 0;
-  padding: 8px 0;
+  display: block;
+  min-width: 157px;
+  margin: 32px auto 0;
 }
 
-.register-form .field-input {
-  margin-left: 0;
-}
-
-.field-label {
-  margin-top: 15px;
-}
-
-.hint-message {
-  margin: 4px 0;
-  color: #1f3c58;
-  font-size: 11px;
+.success-message {
+  padding: 12px;
+  background: #ddf4e3;
+  border-radius: 8px;
 }

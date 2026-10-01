@@ -3,134 +3,150 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FixIt | Register</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap"
-    />
+    <title>FixIt | Create an account</title>
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/register.css" />
     <script src="../js/global.js" defer></script>
     <script src="../js/register.js" defer></script>
   </head>
   <body>
-    <main>
-      <section id="register" class="screen register-page account-page">
-        <header class="site-header">
-          <div class="topbar">
-            <img
-              class="council-logo"
-              src="../assets/council-logo.png"
-              alt="Auckland Council"
-            />
-            <a class="brand" href="issue-type.html">FixIt</a>
-            <button class="menu-button">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-            <nav class="menu-list" id="main-menu" hidden>
-              <ul>
-                <li><a href="#home">Home</a></li>
-                <li>
-                  <a href="issue-type.html" class="menu-report">
-                    <span>FixIt</span>
-                    <span class="small-text-in-menu">-Report an issue</span></a
-                  >
-                </li>
-                <li><a href="history.html">My reports</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#help">Help</a></li>
-                <li><a href="#contact">Contact us</a></li>
-                <li><a href="login.html">Log in</a></li>
-              </ul>
-            </nav>
-          </div>
-        </header>
-        <div class="screen-content">
-          <h1 class="title">Create FixIt account</h1>
-          <form class="register-form">
-            <div class="field">
-              <label class="field-label" for="register-name">Full name</label>
-              <input
-                class="field-input"
-                type="text"
-                id="register-name"
-                placeholder="e.g. Linda Smith"
-              />
-              <p id="name-error" class="error-message" role="alert" hidden></p>
+    <!-- Luka's update: same as changes in Login file-->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="screen register-page">
+      <header class="site-header">
+        <div class="topbar">
+          <img
+            class="council-logo"
+            src="../assets/council-logo.png"
+            alt="Auckland Council"
+          />
+          <img
+            class="council-logo-large"
+            src="../assets/council-logo-large.png"
+            alt="Auckland Council"
+          />
+          <a class="brand" href="issue-type.html">FixIt</a>
+          <button
+            class="menu-button"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="main-menu"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+          <nav class="menu-list" id="main-menu" aria-label="Main menu" hidden>
+            <!-- Luka's update: same as changes in Login file-->
+            <div class="menu-heading">
+              <strong>Menu</strong
+              ><button class="menu-close" type="button" aria-label="Close menu">
+                ×
+              </button>
             </div>
-            <div class="field">
-              <label class="field-label" for="register-email"
-                >Email address</label
-              >
-              <input
-                class="field-input"
-                type="email"
-                id="register-email"
-                placeholder="lindaS@gmail.com"
-              />
-              <p id="email-error" class="error-message" role="alert" hidden></p>
-            </div>
-            <div class="field">
-              <label class="field-label" for="register-phone"
-                >Phone number</label
-              >
-              <input
-                class="field-input"
-                type="tel"
-                id="register-phone"
-                placeholder="+64 0248573752"
-              />
-              <p id="phone-error" class="error-message" role="alert" hidden></p>
-            </div>
-            <div class="field">
-              <label class="field-label" for="register-password"
-                >Password</label
-              >
-              <input
-                class="field-input"
-                type="password"
-                id="register-password"
-                placeholder="************"
-              />
-              <p id="password-hint" class="hint-message">
-                Password must be 6+ characters and include a number
-              </p>
-              <p
-                id="password-error"
-                class="error-message"
-                role="alert"
-                hidden
-              ></p>
-            </div>
-            <div class="field">
-              <label class="field-label" for="register-confirm"
-                >Confirm password</label
-              >
-              <input
-                class="field-input"
-                type="password"
-                id="register-confirm"
-                placeholder="************"
-              />
-              <p
-                id="confirm-error"
-                class="error-message"
-                role="alert"
-                hidden
-              ></p>
-            </div>
-            <button class="button register-button" type="submit">
-              Create account
-            </button>
-          </form>
-          <div class="account-footer">
-            <p class="register-note">Already have an account?</p>
-            <a class="small-link register-link" href="login.html">Log in</a>
-          </div>
+            <ul>
+              <li>
+                <a href="history.html"
+                  ><img src="../assets/menu-reports.svg" alt="" />My Reports</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.aucklandcouncil.govt.nz/report-problem/Pages/default.aspx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="../assets/menu-contact.svg" alt="" />Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ourauckland.aucklandcouncil.govt.nz/welcome-to-auckland/your-city-your-voice/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="../assets/menu-about.svg" alt="" />About Us</a
+                >
+              </li>
+              <li>
+                <a href="login.html"
+                  ><img src="../assets/menu-login.svg" alt="" />Log in</a
+                >
+              </li>
+            </ul>
+          </nav>
         </div>
-      </section>
-    </main>
+      </header>
+      <main id="main-content" class="screen-content">
+        <h1 class="title">Create FixIt account</h1>
+        <p class="help-text">
+          Demo only: your account details are checked here and are not saved.
+        </p>
+        <form id="register-form" class="register-form">
+          <div class="field">
+            <label class="field-label" for="register-name">Full name</label
+            ><input
+              class="field-input"
+              type="text"
+              id="register-name"
+              autocomplete="name"
+              required
+            />
+          </div>
+          <div class="field">
+            <label class="field-label" for="register-email">Email address</label
+            ><input
+              class="field-input"
+              type="email"
+              id="register-email"
+              autocomplete="email"
+              required
+            />
+          </div>
+          <div class="field">
+            <label class="field-label" for="register-phone">Phone number</label
+            ><input
+              class="field-input"
+              type="tel"
+              id="register-phone"
+              autocomplete="tel"
+            />
+          </div>
+          <div class="field">
+            <label class="field-label" for="register-password">Password</label
+            ><input
+              class="field-input"
+              type="password"
+              id="register-password"
+              autocomplete="new-password"
+              required
+            />
+            <p class="help-text">6 or more characters, including a number.</p>
+          </div>
+          <div class="field">
+            <label class="field-label" for="register-confirm"
+              >Confirm password</label
+            ><input
+              class="field-input"
+              type="password"
+              id="register-confirm"
+              autocomplete="new-password"
+              required
+            />
+          </div>
+          <p id="register-error" class="error-message" role="alert" hidden></p>
+          <p
+            id="register-message"
+            class="success-message"
+            role="status"
+            hidden
+          ></p>
+          <button class="button register-button" type="submit">
+            Create account
+          </button>
+        </form>
+        <div class="account-footer">
+          <p>Already have an account?</p>
+          <a href="login.html">Log in</a>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
