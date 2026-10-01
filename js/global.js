@@ -27,3 +27,14 @@ if (menuButton && menuList) {
     }
   });
 }
+
+// Etsuko's update: Close the menu when clicking outside of it
+document.addEventListener("click", function (event) {
+  if (
+    !menuList.hidden &&
+    !menuList.contains(event.target) &&
+    !menuButton.contains(event.target)
+  ) {
+    closeMenu();
+  }
+});

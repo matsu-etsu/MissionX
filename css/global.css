@@ -95,8 +95,9 @@ button {
    four icon links and a proper close button. */
 .menu-list {
   position: absolute;
-  top: 52px;
+  top: 0px;
   right: 0;
+  left: auto;
   width: 304px;
   max-width: 100%;
   min-height: 390px;
@@ -112,6 +113,7 @@ button {
   justify-content: space-between;
   margin-bottom: 24px;
   font-size: 32px;
+  gap: 16px;
 }
 .menu-close {
   border: 0;
@@ -278,6 +280,7 @@ button {
 
 /* Luka's update: Mobile still matches the 402px Figma screen; desktop gets
 a comfortable centre column. This is our media-query lesson in action. */
+/* Etsuko's update: add .menu-heading, .menu-list to change the menu layout */
 @media screen and (min-width: 800px) {
   .screen {
     max-width: none;
@@ -298,6 +301,15 @@ a comfortable centre column. This is our media-query lesson in action. */
     width: 110px;
     height: 56px;
     object-fit: contain;
+  }
+  .menu-heading {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+  .menu-list {
+    left: 0;
+    right: auto;
   }
   .menu-button {
     order: 1;

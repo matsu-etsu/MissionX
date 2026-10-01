@@ -1,6 +1,8 @@
 // Luka's update: The map is Google Maps now. I kept this small: change
 // map address, ask for GPS if needed, and check location before moving on.
 
+// Etsuko's update: localStorage to sessionStorage
+
 const locationForm = document.querySelector("#location-form");
 const address = document.querySelector("#address");
 const locationError = document.querySelector("#location-error");
@@ -26,7 +28,7 @@ function showPlace(place) {
   locationError.hidden = true;
 }
 
-address.value = localStorage.getItem("fixitLocation") || "";
+address.value = sessionStorage.getItem("fixitLocation") || "";
 
 if (address.value) {
   showPlace(address.value);
@@ -99,6 +101,6 @@ locationForm.addEventListener("submit", function (event) {
     return;
   }
 
-  localStorage.setItem("fixitLocation", place);
+  sessionStorage.setItem("fixitLocation", place);
   window.location.href = "contact.html";
 });

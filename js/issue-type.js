@@ -1,8 +1,10 @@
 // Luka's update: Radio buttons keep Etsuko's selected look while making
 // issue choices work with a keyboard and screen reader.
+
+// Etsuko's update: localStorage to sessionStorage
 const issueForm = document.querySelector("#issue-form");
 const issueError = document.querySelector("#issue-error");
-const savedIssue = localStorage.getItem("fixitIssue");
+const savedIssue = sessionStorage.getItem("fixitIssue");
 const choices = document.querySelectorAll('input[name="issue"]');
 
 function updateSelectedIssues() {
@@ -48,6 +50,6 @@ issueForm.addEventListener("submit", function (event) {
   }
 
   issueError.hidden = true;
-  localStorage.setItem("fixitIssue", selected.value);
+  sessionStorage.setItem("fixitIssue", selected.value);
   window.location.href = "details.html";
 });

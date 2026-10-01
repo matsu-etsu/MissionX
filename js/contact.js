@@ -31,8 +31,8 @@ contactForm.addEventListener("submit", function (event) {
     return;
   }
 
-  const issue = localStorage.getItem("fixitIssue");
-  const location = localStorage.getItem("fixitLocation");
+  const issue = sessionStorage.getItem("fixitIssue");
+  const location = sessionStorage.getItem("fixitLocation");
   if (!issue || !location) {
     contactError.textContent = "Please complete the earlier report steps first.";
     contactError.hidden = false;
@@ -41,18 +41,20 @@ contactForm.addEventListener("submit", function (event) {
 
   // Luka's update: The reference makes the confirmation useful. Only the
   // issue and reference enter local storage; contact details stay out.
+
+  // Etsuko's update: I change some of localStorage to sessionStorage
   const reference = "FIX" + Date.now().toString().slice(-6);
   const report = {
     reference: reference,
     issue: issue,
-    description: localStorage.getItem("fixitDescription"),
+    description: sessionStorage.getItem("fixitDescription"),
     location: location
   };
   localStorage.setItem("fixitReport", JSON.stringify(report));
   localStorage.setItem("fixitReference", reference);
   localStorage.setItem("fixitLastIssue", issue);
-  localStorage.removeItem("fixitIssue");
-  localStorage.removeItem("fixitDescription");
-  localStorage.removeItem("fixitLocation");
+  sessionStorage.removeItem("fixitIssue");
+  sessionStorage.removeItem("fixitDescription");
+  sessionStorage.removeItem("fixitLocation");
   window.location.href = "confirmation.html";
 });
