@@ -10,6 +10,9 @@ const photoInput = document.querySelector("#photo-input");
 const cameraInput = document.querySelector("#camera-input");
 const photoStatus = document.querySelector("#photo-status");
 const photoSlots = document.querySelectorAll(".photo-slot");
+const photoError = document.querySelector(".photo-error");
+const closeError = document.querySelector(".close-error");
+
 const selectedPhotos = [];
 
 description.value = sessionStorage.getItem("fixitDescription") || "";
@@ -20,7 +23,7 @@ description.addEventListener("input", function () {
   sessionStorage.setItem("fixitDescription", description.value);
 });
 
-// Etsuko's update: Show the selected photo images in the three photo slots
+// Etsuko's update: Show the selected photo images in the three photo slots.
 function showPhotos() {
   photoSlots.forEach(function (slot, index) {
     const image = slot.querySelector("img");
@@ -39,20 +42,22 @@ function showPhotos() {
   });
 }
 
+// Etsuko's update: Show the Figma photo error card
+// when a file cannot be uploaded.
 function addPhotos(files) {
   if (selectedPhotos.length + files.length > 3) {
     photoStatus.textContent = "Please choose no more than three photos.";
-    photoStatus.className = "error-message";
+    photoStatus.className = "error-message visible";
     return;
   }
 
   for (let i = 0; i < files.length; i++) {
     if (
       files[i].size > 3000000 ||
-      (files[i].type !== "image/jpeg" && files[i].type !== "image/png")
+      (files[i].type !== "image/jpeg" &&
+        files[i].type !== "image/png")
     ) {
-      photoStatus.textContent = "Please use JPG or PNG files under 3 MB.";
-      photoStatus.className = "error-message";
+      photoError.hidden = false;
       return;
     }
   }
@@ -62,41 +67,62 @@ function addPhotos(files) {
   }
 
   showPhotos();
+
   photoStatus.textContent =
     selectedPhotos.length +
     " of 3 photos selected. This is a demo; files are not sent.";
   photoStatus.className = "help-text";
 }
 
+// Add photos
 photoInput.addEventListener("change", function () {
   addPhotos(photoInput.files);
   photoInput.value = "";
 });
 
+// Take new photos
 cameraInput.addEventListener("change", function () {
   addPhotos(cameraInput.files);
   cameraInput.value = "";
 });
 
+// Remove selected photos
 photoSlots.forEach(function (slot, index) {
   slot.querySelector("button").addEventListener("click", function () {
     selectedPhotos.splice(index, 1);
     showPhotos();
-    photoStatus.textContent = selectedPhotos.length + " of 3 photos selected.";
+
+    photoStatus.textContent =
+      selectedPhotos.length + " of 3 photos selected.";
     photoStatus.className = "help-text";
   });
 });
 
+// Check description and continue
 detailsForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   if (description.value.trim() === "") {
-    detailsError.hidden = false;
+    detailsError.classList.add("visible");
+    description.classList.add("input-error");
+    description.setAttribute("aria-invalid", "true");
     description.focus();
     return;
   }
 
-  detailsError.hidden = true;
-  sessionStorage.setItem("fixitDescription", description.value.trim());
+  detailsError.classList.remove("visible");
+  description.classList.remove("input-error");
+  description.setAttribute("aria-invalid", "false");
+
+  sessionStorage.setItem(
+    "fixitDescription",
+    description.value.trim()
+  );
+
   window.location.href = "location.html";
+});
+
+// Etsuko's update: Allow users to close the photo error card.
+closeError.addEventListener("click", function () {
+  photoError.hidden = true;
 });

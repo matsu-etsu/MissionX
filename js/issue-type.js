@@ -44,10 +44,12 @@ issueForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const selected = document.querySelector('input[name="issue"]:checked');
 
-  if (!selected) {
-    issueError.hidden = false;
-    return;
-  }
+if (!selected) {
+  issueError.classList.add("visible");
+  return;
+}
+
+issueError.classList.remove("visible");
 
   issueError.hidden = true;
   sessionStorage.setItem("fixitIssue", selected.value);

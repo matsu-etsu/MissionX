@@ -1,22 +1,119 @@
 /* Luka's update: The success state appears only after a valid demo form
    submission; it doesn't occupy the page before then. */
+/* Etsuko's update: Adjusted spacing and button sizing to better match
+   the Figma design while keeping Luka's responsive improvements. */
 .login-form {
   margin-top: 24px;
 }
 
-.remember {
-  font-size: 14px;
-}
-
 .login-button {
   display: block;
-  min-width: 157px;
+  width: 157px;
+  height: 41px;
   margin: 40px auto 0;
+  padding: 8px 0;
 }
 
-.success-message {
-  padding: 12px;
-  background: #ddf4e3;
+.login-form {
+  margin-top: 24px;
+}
+
+.login-form .field-input {
+  margin-left: 0;
+}
+
+.login-state .login-form {
+  margin-top: 40px;
+}
+
+.login-state .email-field {
+  margin-bottom: 16px;
+}
+
+.login-options-row {
+  display: flex;
+  justify-content: space-between;
+  color: #8e8e93;
+  font-size: 12px;
+}
+
+.login-options-row input {
+  width: 12px;
+  height: 12px;
+  margin: 0 8px 0 0;
+}
+
+.login-options-row a {
+  color: inherit;
+}
+
+.login-form + .account-footer {
+  margin-top: 152px;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+/* Login success message */
+.login-success-area {
+  position: relative;
+  min-height: 25px;
+}
+
+.login-success-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: "Roboto", sans-serif;
+  font-size: 12px;
+  color: #000000;
+  font-weight: 400;
+  width: 352px;
+  height: 25px;
+  background: #b5ffc8;
+  border: 1px solid #3c6720;
+  border-radius: 12px;
+  margin: 0px;
+}
+
+.login-success-bar[hidden] {
+  display: none !important;
+}
+
+.success-mark {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 20px;
+  border: 3px solid #3c6720;
+  border-radius: 50%;
+  color: #3c6720;
+  font-size: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-button {
+  border-color: #8e8e93;
+  background-color: #8e8e93;
   color: #1f3c58;
-  border-radius: 8px;
+}
+
+.loading-button:hover {
+  border-color: #8e8e93;
+  background-color: #8e8e93;
+  color: #1f3c58;
+}
+
+.logged-in-button {
+  border-color: #3c6720;
+  background-color: #3c6720;
+}
+
+.logged-in-button:hover {
+  border-color: #3c6720;
+  background-color: #3c6720;
 }

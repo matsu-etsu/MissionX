@@ -79,72 +79,117 @@
         <p class="help-text">
           Demo only: your account details are checked here and are not saved.
         </p>
-        <form id="register-form" class="register-form">
+        <!-- Etsuko's update: Restored the Figma validation UI while keeping
+             the team's accessibility improvements. -->
+        <form id="register-form" class="register-form" novalidate>
           <div class="field">
-            <label class="field-label" for="register-name">Full name</label
-            ><input
+            <label class="field-label" for="register-name"> Full name </label>
+
+            <input
               class="field-input"
               type="text"
               id="register-name"
               autocomplete="name"
+              placeholder="e.g. Linda Smith"
               required
+              aria-describedby="name-error"
             />
+
+            <p id="name-error" class="error-message" role="alert"></p>
           </div>
+
           <div class="field">
-            <label class="field-label" for="register-email">Email address</label
-            ><input
+            <label class="field-label" for="register-email">
+              Email address
+            </label>
+
+            <input
               class="field-input"
               type="email"
               id="register-email"
               autocomplete="email"
+              placeholder="lindaS@gmail.com"
               required
+              aria-describedby="email-error"
             />
+
+            <p id="email-error" class="error-message" role="alert"></p>
           </div>
+
           <div class="field">
-            <label class="field-label" for="register-phone">Phone number</label
-            ><input
+            <label class="field-label" for="register-phone">
+              Phone number
+            </label>
+
+            <input
               class="field-input"
               type="tel"
               id="register-phone"
               autocomplete="tel"
+              placeholder="+64 0248573752"
+              aria-describedby="phone-error"
             />
+
+            <p id="phone-error" class="error-message" role="alert"></p>
           </div>
+
           <div class="field">
-            <label class="field-label" for="register-password">Password</label
-            ><input
+            <label class="field-label" for="register-password">
+              Password
+            </label>
+
+            <input
               class="field-input"
               type="password"
               id="register-password"
               autocomplete="new-password"
+              placeholder="************"
               required
+              aria-describedby="password-hint password-error"
             />
-            <p class="help-text">6 or more characters, including a number.</p>
+
+            <p id="password-hint" class="hint-message">
+              Password must be 6+ characters and include a number
+            </p>
+
+            <p id="password-error" class="error-message" role="alert"></p>
           </div>
+
           <div class="field">
-            <label class="field-label" for="register-confirm"
-              >Confirm password</label
-            ><input
+            <label class="field-label" for="register-confirm">
+              Confirm password
+            </label>
+
+            <input
               class="field-input"
               type="password"
               id="register-confirm"
               autocomplete="new-password"
+              placeholder="************"
               required
+              aria-describedby="confirm-error"
             />
+
+            <p id="confirm-error" class="error-message" role="alert"></p>
           </div>
-          <p id="register-error" class="error-message" role="alert" hidden></p>
+
+          <p id="register-error" class="error-message" role="alert"></p>
+
           <p
             id="register-message"
             class="success-message"
             role="status"
             hidden
           ></p>
+
           <button class="button register-button" type="submit">
             Create account
           </button>
         </form>
+
         <div class="account-footer">
-          <p>Already have an account?</p>
-          <a href="login.html">Log in</a>
+          <p class="register-note">Already have an account?</p>
+          <a class="small-link register-link" href="login.html">Log in</a>
         </div>
       </main>
     </div>

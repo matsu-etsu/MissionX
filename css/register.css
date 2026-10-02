@@ -4,10 +4,33 @@
   margin-top: 24px;
 }
 
+.register-form .field {
+  margin-bottom: 0;
+}
+
 .register-button {
   display: block;
-  min-width: 157px;
-  margin: 32px auto 0;
+  width: 157px;
+  height: 41px;
+  margin: 40px auto 0;
+  padding: 8px 0;
+}
+
+.register-form .field-input {
+  margin-left: 0;
+}
+
+/* Etsuko's update: Adjusted label spacing to match the Figma design. */
+.field-label {
+  margin-top: 15px;
+}
+
+/* Etsuko's update: Restored the password requirement hint
+   from the Figma design. */
+.hint-message {
+  margin: 4px 0;
+  color: #1f3c58;
+  font-size: 11px;
 }
 
 .success-message {

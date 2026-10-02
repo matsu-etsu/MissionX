@@ -78,36 +78,57 @@
           </nav>
         </div>
       </header>
+      <!-- Etsuko's update: Restored the Figma design's custom validation
+     messages and layout while keeping Luka's update - the accessibility improvements. -->
       <main id="main-content" class="screen-content">
         <h1 class="title">Log in</h1>
         <p class="help-text">
           This is a front-end demo. It does not connect to a real Council
           account.
         </p>
-        <p id="login-message" class="success-message" role="status" hidden></p>
-        <form id="login-form" class="login-form">
-          <div class="field">
-            <label class="field-label" for="login-email">Email address</label
-            ><input
+        <div class="login-success-area">
+          <div class="login-success-bar" hidden>
+            <div class="success-mark">&#x2714;</div>
+            <p>Login successful - Redirecting securely...</p>
+          </div>
+        </div>
+        <form id="login-form" class="login-form" novalidate>
+          <div class="field email-field">
+            <label class="field-label" for="login-email">Email address</label>
+            <input
               class="field-input"
               type="email"
               id="login-email"
               autocomplete="email"
               placeholder="lindaS@gmail.com"
               required
+              aria-describedby="email-error"
             />
+            <p id="email-error" class="error-message" role="alert"></p>
           </div>
+
           <div class="field">
-            <label class="field-label" for="login-password">Password</label
-            ><input
+            <label class="field-label" for="login-password">Password</label>
+            <input
               class="field-input"
               type="password"
               id="login-password"
               autocomplete="current-password"
               required
+              aria-describedby="password-error"
             />
+            <p id="password-error" class="error-message" role="alert"></p>
           </div>
-          <label class="remember"><input type="checkbox" /> Remember me</label>
+
+          <div class="login-options-row">
+            <label class="login-options">
+              <input type="checkbox" checked />Remember me
+            </label>
+            <a class="forgot" href="#forgot">Forgot password?</a>
+          </div>
+
+          <p id="login-error" class="error-message" role="alert" hidden></p>
+
           <button class="button login-button" type="submit">Log in</button>
         </form>
         <div class="account-footer">

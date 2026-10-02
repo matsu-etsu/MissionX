@@ -2,10 +2,13 @@
 // Etsuko's feedback on the two contact states.
 const contactForm = document.querySelector("#contact-form");
 const contactFields = document.querySelector("#contact-fields");
-const contactError = document.querySelector("#contact-error");
-const contactChoices = document.querySelectorAll('input[name="contact-choice"]');
+const emailError = document.querySelector("#email-error");
+const contactChoices = document.querySelectorAll(
+  'input[name="contact-choice"]',
+);
 const contactEmail = document.querySelector("#contact-email");
 const contactInputs = contactFields.querySelectorAll("input");
+const stepsError = document.querySelector("#steps-error");
 
 function showContactFields() {
   const anonymous = document.querySelector("#anonymous").checked;
@@ -15,7 +18,9 @@ function showContactFields() {
   });
   contactEmail.required = !anonymous;
   contactChoices.forEach(function (choice) {
-    choice.closest(".contact-choice").classList.toggle("selected", choice.checked);
+    choice
+      .closest(".contact-choice")
+      .classList.toggle("selected", choice.checked);
   });
 }
 
@@ -27,15 +32,39 @@ showContactFields();
 
 contactForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  if (!contactForm.reportValidity()) {
+
+  const anonymous = document.querySelector("#anonymous").checked;
+
+  //  Error message for email field if not anonymous and email is empty
+  if (!anonymous && contactEmail.value.trim() === "") {
+    emailError.textContent = "Please enter your email address.";
+    emailError.classList.add("visible");
+    contactEmail.classList.add("input-error");
+    contactEmail.setAttribute("aria-invalid", "true");
+    contactEmail.focus();
     return;
   }
+  if (!anonymous && !contactEmail.validity.valid) {
+  emailError.textContent =
+    "Please enter a valid email address.";
+  emailError.classList.add("visible");
+  contactEmail.classList.add("input-error");
+  contactEmail.setAttribute("aria-invalid", "true");
+  contactEmail.focus();
+  return;
+}
+
+  emailError.classList.remove("visible");
+  contactEmail.classList.remove("input-error");
+  contactEmail.setAttribute("aria-invalid", "false");
 
   const issue = sessionStorage.getItem("fixitIssue");
   const location = sessionStorage.getItem("fixitLocation");
+
+  // Error message if the user tries to submit the contact form without completing the earlier steps
   if (!issue || !location) {
-    contactError.textContent = "Please complete the earlier report steps first.";
-    contactError.hidden = false;
+    stepsError.textContent = "Please complete the earlier report steps first.";
+    stepsError.classList.add("visible");
     return;
   }
 
@@ -48,7 +77,7 @@ contactForm.addEventListener("submit", function (event) {
     reference: reference,
     issue: issue,
     description: sessionStorage.getItem("fixitDescription"),
-    location: location
+    location: location,
   };
   localStorage.setItem("fixitReport", JSON.stringify(report));
   localStorage.setItem("fixitReference", reference);

@@ -260,10 +260,23 @@ button {
   font-size: 20px;
   line-height: 0;
 }
+/* -----Error messages ----- */
+/* Etsuko's update: Added shared validation styles for form errors. */
+
+.field-input.input-error {
+  border: 2px solid #ff383c;
+}
+
 .error-message {
-  margin: 8px 0;
-  color: #a11919;
-  font-size: 14px;
+  min-height: 16px;
+  margin: 4px 0;
+  color: #ff383c;
+  font-size: 11px;
+  visibility: hidden;
+}
+
+.error-message.visible {
+  visibility: visible;
 }
 .help-text {
   color: #525b66;

@@ -80,7 +80,7 @@
       </header>
       <main id="main-content" class="screen-content">
         <h1 class="title">How do we keep you updated?</h1>
-        <form id="contact-form" class="screen-form">
+        <form id="contact-form" class="screen-form" novalidate>
           <!-- Luka's update: These are real radio options, so anonymous reports
              hide the contact fields instead of following a fake anchor. -->
           <fieldset class="contact-options">
@@ -127,8 +127,10 @@
                 autocomplete="email"
                 placeholder="lindaS@gmail.com"
                 required
+                aria-describedby="email-error"
               />
             </div>
+          <p id="email-error" class="error-message" role="alert"></p>
             <div class="field">
               <label class="field-label" for="contact-phone">Phone number</label
               ><input
@@ -140,7 +142,7 @@
               />
             </div>
           </div>
-          <p id="contact-error" class="error-message" role="alert" hidden></p>
+          <p id="steps-error" class="error-message" role="alert"></p>
           <div class="actions">
             <a
               class="button outline back-button"

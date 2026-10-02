@@ -36,3 +36,9 @@
   flex-shrink: 0;
   accent-color: #1f3c58;
 }
+
+/* Keep the validation message below the contact fields. */
+#email-error {
+  min-height: 0;
+  margin: 0;
+}
